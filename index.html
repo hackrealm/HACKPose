@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HACKPose: Hierarchical Axial Cross-attention for Keypoint-based 6D Object Pose Estimation</title>
+<meta name="description" content="HACKPose improves RGB-D keypoint-voting 6D object pose estimation with hierarchical axial cross-attention and dual-modality keypoint selection.">
+
+<!--
+  ===========================================================================
+  DOUBLE-ANONYMOUS REVIEW (ICRA 2027)
+  ---------------------------------------------------------------------------
+  The author block is intentionally NOT stored in this file, not even as an
+  HTML comment: comments are served to every visitor and are visible in
+  View Source, which would defeat anonymous review.
+
+  POST-ACCEPTANCE: restore the author block from the \author{...} macro in
+  paper/root.tex (that directory is gitignored and never published).
+  ===========================================================================
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Noto+Sans:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<style>
+  /* ---------- tokens ---------- */
+  :root {
+    --ink:       #1f2733;
+    --ink-soft:  #4a5568;
+    --rule:      #e6eaf0;
+    --accent:    #2b5f9e;
+    --accent-bg: #eef4fb;
+    --page:      #ffffff;
+    --measure:   860px;   /* the single content width: text AND figures */
+    --gutter:    1.5rem;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--ink);
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 17px;
+    line-height: 1.7;
+  }
+
+  /* ---------- the one wrapper everything uses ---------- */
+  .wrap {
+    max-width: var(--measure);
+    margin-inline: auto;
+    padding-inline: var(--gutter);
+  }
+
+  /* ---------- hero ---------- */
+  /* The hero gets a wider box than the body. Its content is all centred, so a
+     wider measure creates no visible misalignment with the text column below,
+     but it keeps the 88-character title on two lines instead of three. */
+  .hero {
+    max-width: 900px;
+    text-align: center;
+    padding-block: 4rem 2.5rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .title {
+    font-family: 'Google Sans', 'Noto Sans', sans-serif;
+    font-size: clamp(1.5rem, 4.2vw, 2.15rem);
+    font-weight: 700;
+    line-height: 1.28;
+    letter-spacing: -0.015em;
+    margin: 0 0 1.6rem;
+    text-wrap: balance;
+  }
+  .title .name { color: var(--accent); }
+
+  .authors {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--ink-soft);
+    margin: 0 0 0.7rem;
+  }
+  .venue { margin: 0; }
+  .venue span {
+    display: inline-block;
+    background: var(--accent-bg);
+    color: var(--accent);
+    border-radius: 999px;
+    padding: 0.2rem 0.9rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  /* ---------- coming-soon buttons ---------- */
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-top: 1.9rem;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 999px;
+    padding: 0.5rem 1.15rem;
+    font-size: 0.92rem;
+    font-weight: 600;
+    background: #f1f3f6;
+    color: #9aa3af;
+    cursor: not-allowed;
+    user-select: none;
+  }
+
+  /* ---------- sections ---------- */
+  section { padding-block: 1.75rem; }
+  section + section { border-top: 1px solid var(--rule); }
+
+  /* The teaser figure is part of the abstract, not a new topic: no divider,
+     and it sits directly under the text instead of a full section apart. */
+  section.flush {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  h2 {
+    font-family: 'Roboto';
+    font-size: 2.0rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 0 0 1.6rem;
+  }
+
+  p { margin: 0 0 1.15rem; }
+  p:last-child { margin-bottom: 0; }
+
+  /* Body copy is justified. Hyphenation is required, not cosmetic: without it
+     justify opens rivers of whitespace once the column narrows on mobile. */
+  section p {
+    text-align: justify;
+    text-justify: inter-word;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+  }
+
+  /* ---------- figures: exactly the same box as the text ---------- */
+  figure { margin: 0; }
+  figure img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* ---------- video grid (Robotic Application) ---------- */
+  .videos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1rem;
+  }
+  .videos video {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    background: #000;
+  }
+  .videos figure { margin: 0; }
+  .videos figcaption {
+    font-size: 0.86rem;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    margin-top: 0.55rem;
+  }
+
+  /* Delete this placeholder once the first video is dropped in. */
+  .video-placeholder {
+    border: 1px dashed #c7d0dc;
+    border-radius: 8px;
+    background: #fafbfc;
+    color: var(--ink-soft);
+    text-align: center;
+    padding: 3rem 1.25rem;
+    font-size: 0.92rem;
+  }
+  .video-placeholder i {
+    display: block;
+    font-size: 1.6rem;
+    color: #c7d0dc;
+    margin-bottom: 0.6rem;
+  }
+
+  /* ---------- footer ---------- */
+  footer {
+    background: #f8f9fb;
+    border-top: 1px solid var(--rule);
+    padding-block: 2rem;
+    font-size: 0.86rem;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    text-align: center;
+  }
+  footer a { color: var(--accent); }
+  footer p { margin: 0 0 0.5rem; }
+
+  @media (max-width: 600px) {
+    :root { --gutter: 1rem; }
+    body { font-size: 16px; }
+    .hero { padding-block: 2.5rem 1.75rem; }
+    section { padding-block: 2.25rem; }
+    h2 { font-size: 1.25rem; }
+    .authors { font-size: 1rem; }
+    .btn { padding: 0.45rem 0.95rem; font-size: 0.87rem; }
+  }
+</style>
+</head>
+
+<body>
+
+<!-- ======================= TITLE / AUTHORS / VENUE ======================= -->
+<header class="hero wrap">
+  <h1 class="title">
+    <span class="name">HACKPose</span>: Hierarchical Axial Cross-attention for
+    Keypoint-based 6D Object Pose Estimation
+  </h1>
+
+  <p class="authors">Anonymous Author(s)</p>
+  <p class="venue"><span>Submitting</span></p>
+
+  <!-- =========================== COMING SOON ===========================
+       All four are placeholders. To enable the paper link post-review:
+         1. place the ANONYMIZED pdf at static/pdfs/hackpose.pdf
+         2. replace the "Paper" span below with:
+            <a class="btn" href="static/pdfs/hackpose.pdf">
+              <i class="fas fa-file-pdf"></i><span>Paper</span></a>
+       Deliberately no href and no PDF path in the live markup: the only
+       compiled PDF available today is the non-anonymized build.
+       TODO: arXiv id and code URL are not available yet. The code link must
+       NOT point at the authors' personal GitHub repository.
+       (Demo videos live in the "Robotic Application" section further down.)
+  -->
+  <nav class="links">
+    <span class="btn" aria-disabled="true"><i class="fas fa-file-pdf"></i>Paper (coming soon)</span>
+    <span class="btn" aria-disabled="true"><i class="fas fa-file-lines"></i>arXiv (coming soon)</span>
+    <span class="btn" aria-disabled="true"><i class="fab fa-github"></i>Code (coming soon)</span>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ============================= ABSTRACT ============================= -->
+  <section class="wrap">
+    <h2>Abstract</h2>
+    <p>
+      Reliable 6D object pose estimation is essential for robotic manipulation,
+      as localization errors propagate to downstream tasks. While recent work
+      increasingly focuses on zero-shot generalization, many industrial and
+      laboratory tasks involve known tools, parts, and workpieces observed under
+      changing viewpoints, clutter, and occlusion. In such settings, pose
+      estimation must be both accurate and efficient for repeated use within the
+      manipulation pipeline. We address this problem through an RGB-D
+      keypoint-voting formulation and introduce HACKPose, which improves both the
+      scene evidence used for voting and the canonical targets being voted for.
+      First, a hierarchical axial cross-attention network progressively models
+      visual&ndash;geometric interactions along the token and channel axes,
+      allowing independently encoded appearance and geometry features to
+      complement each other more effectively. Second, a dual-modality keypoint
+      selection strategy combines visual and geometric saliency with spatial
+      coverage, producing more informative canonical targets. The keypoint
+      selection is performed offline, while online inference retains a compact
+      voting and geometric fitting pipeline. Across five BOP benchmarks,
+      HACKPose achieves the best mean AR of 88.3 while running at 0.18&nbsp;s per
+      input on an NVIDIA RTX&nbsp;3090. Ablations confirm that
+      token&ndash;channel interaction and dual-modality keypoint selection
+      address complementary voting bottlenecks, supporting accurate and efficient
+      known-object pose estimation for dynamic robotic workspaces.
+    </p>
+  </section>
+
+  <!-- ============================== TEASER ============================== -->
+  <section class="wrap flush">
+    <figure>
+      <img src="static/images/hackpose_intro.svg"
+           alt="HACKPose enriches visual and geometric features with token-wise and channel-wise cross-attention, in contrast to point-wise matching.">
+    </figure>
+  </section>
+
+  <!-- ======================= ROBOTIC APPLICATION ======================= -->
+  <section class="wrap">
+    <h2>Robotic Application</h2>
+
+    <!--
+      ===================================================================
+      DROP YOUR VIDEOS IN HERE
+      -------------------------------------------------------------------
+      1. Put the encoded .mp4 files in  static/videos/
+      2. Delete the <div class="video-placeholder"> block below.
+      3. Uncomment the <div class="videos"> block and duplicate the
+         <figure> for each clip. The grid reflows on its own: two side by
+         side on desktop, one per row under ~700px. No CSS change needed.
+
+      ENCODING — Safari refuses to autoplay a video that still carries an
+      audio track, so the -an flag is not optional:
+
+        ffmpeg -i input.mov \
+               -vf "scale=1280:-2" \
+               -c:v libx264 -crf 28 -preset slow -pix_fmt yuv420p \
+               -movflags +faststart -an \
+               static/videos/demo1.mp4
+
+      Keep "muted playsinline autoplay loop" on every <video> tag or iOS
+      will not start it. Add poster="..." if you want a first frame before
+      the clip loads.
+      ===================================================================
+    -->
+
+    <div class="video-placeholder">
+      <i class="fas fa-video"></i>
+      Robot demonstration videos coming soon.
+    </div>
+
+    <!--
+    <div class="videos">
+      <figure>
+        <video muted playsinline autoplay loop preload="metadata">
+          <source src="static/videos/demo1.mp4" type="video/mp4">
+        </video>
+        <figcaption>TODO: caption for the first clip.</figcaption>
+      </figure>
+      <figure>
+        <video muted playsinline autoplay loop preload="metadata">
+          <source src="static/videos/demo2.mp4" type="video/mp4">
+        </video>
+        <figcaption>TODO: caption for the second clip.</figcaption>
+      </figure>
+    </div>
+    -->
+
+  </section>
+
+  <!-- ============================== METHOD ============================== -->
+  <section class="wrap">
+    <h2>Method</h2>
+    <p>
+      Given an RGB-D image, HACKPose predicts the rigid transformation that maps
+      an object from its own coordinate frame into the camera frame. It is a
+      keypoint-voting framework that improves both sides of the voting process.
+      On the scene side, point-aligned visual and geometric descriptors are
+      extracted from the RGB image and its point cloud, refined by a hierarchical
+      axial cross-attention network along the token axis and then the channel
+      axis, and merged by an adaptive gated fusion layer into a unified per-point
+      representation. On the model side, canonical 3D keypoints are selected from
+      regions with joint visual&ndash;geometric saliency; this branch is
+      precomputed once per object and adds no online inference cost. At run time,
+      scene points vote for those keypoints through offset regression, MeanShift
+      clustering aggregates the votes, least-squares fitting recovers an initial
+      pose, and ICP refines it into the final 6D pose.
+    </p>
+    <figure>
+      <img src="static/images/overall_pipeline.svg"
+           alt="HACKPose pipeline: independent visual and geometric extractors, hierarchical axial cross-attention fusion, offline saliency-based keypoint selection, then voting, least-squares fitting and ICP refinement.">
+    </figure>
+  </section>
+
+</main>
+
+<!-- ============================== FOOTER ============================== -->
+<footer>
+  <div class="wrap">
+    <p>
+      This website is adapted from the
+      <a href="https://nerfies.github.io/" rel="noopener">Nerfies</a> project page,
+      released under a
+      <a href="http://creativecommons.org/licenses/by-sa/4.0/" rel="license noopener">Creative
+      Commons Attribution-ShareAlike 4.0 International License</a>.
+    </p>
+    <p>Paper under double-anonymous review. Author information withheld.</p>
+  </div>
+</footer>
+
+</body>
+</html>
