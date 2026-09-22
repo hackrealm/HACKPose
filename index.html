@@ -3,38 +3,47 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>HACKPose: Hierarchical Axial Cross-attention for Keypoint-based 6D Object Pose Estimation</title>
-<meta name="description" content="HACKPose improves RGB-D keypoint-voting 6D object pose estimation with hierarchical axial cross-attention and dual-modality keypoint selection.">
-
-<!--
-  ===========================================================================
-  DOUBLE-ANONYMOUS REVIEW (ICRA 2027)
-  ---------------------------------------------------------------------------
-  The author block is intentionally NOT stored in this file, not even as an
-  HTML comment: comments are served to every visitor and are visible in
-  View Source, which would defeat anonymous review.
-
-  POST-ACCEPTANCE: restore the author block from the \author{...} macro in
-  paper/root.tex (that directory is gitignored and never published).
-  ===========================================================================
--->
+<title>HACKPose: Hierarchical Axial Cross-Attention for Keypoint-based 6D Object Pose Estimation</title>
+<meta name="description" content="Accurate and efficient RGB-D pose estimation for known objects in cluttered and dynamic robotic workspaces. 88.3 mean AR across five BOP benchmarks at 0.18 s per input.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Noto+Sans:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
 <style>
-  /* ---------- tokens ---------- */
+
   :root {
-    --ink:       #1f2733;
-    --ink-soft:  #4a5568;
-    --rule:      #e6eaf0;
-    --accent:    #2b5f9e;
-    --accent-bg: #eef4fb;
-    --page:      #ffffff;
-    --measure:   860px;   /* the single content width: text AND figures */
-    --gutter:    1.5rem;
+
+    --white:      #ffffff;
+    --bg-soft:    #f8fafc;
+    --gray-light: #f1f5f9;
+    --heading:    #1c2b33;
+    --body:       #1c2b33;
+    --muted:      #64748b;
+    --faint:      #94a3b8;
+    --link:       #0064e0;
+    --link-hover: #0052cc;
+    --accent:     #0080ff;
+    --btn-dark:   #1c2b33;
+    --border:     #e2e8f0;
+    --rule:       #e2e8f0;
+
+    --font-head:  'Manrope', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-body:  'Manrope', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono:  'SF Mono', 'Monaco', 'Cascadia Code', 'Roboto Mono', monospace;
+
+    --fs-title:   48px;
+    --fs-subtitle: 40px;
+    --fs-section: 38px;
+    --fs-sub:     24px;
+    --fs-body:    20px;
+    --fs-authors: 20px;
+
+    --measure:    900px;
+    --gutter:     1.5rem;
+    --radius:     10px;
+    --pad-scale:  1;
   }
 
   *, *::before, *::after { box-sizing: border-box; }
@@ -43,333 +52,920 @@
 
   body {
     margin: 0;
-    background: var(--page);
-    color: var(--ink);
-    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 17px;
-    line-height: 1.7;
+    background: var(--white);
+    color: var(--body);
+    font-family: var(--font-body);
+    font-size: var(--fs-body);
+    font-weight: 400;
+    line-height: 1.75;
   }
 
-  /* ---------- the one wrapper everything uses ---------- */
+  a { color: var(--link); text-decoration: none; }
+  a:hover { color: var(--link-hover); text-decoration: underline; }
+
   .wrap {
-    max-width: var(--measure);
+    max-width: var(--width, var(--measure));
     margin-inline: auto;
     padding-inline: var(--gutter);
   }
 
-  /* ---------- hero ---------- */
-  /* The hero gets a wider box than the body. Its content is all centred, so a
-     wider measure creates no visible misalignment with the text column below,
-     but it keeps the 88-character title on two lines instead of three. */
-  .hero {
-    max-width: 900px;
-    text-align: center;
-    padding-block: 4rem 2.5rem;
-    border-bottom: 1px solid var(--rule);
+  .section {
+
+    --pad-top:        3.5rem;
+    --pad-bottom:     3.5rem;
+    --width:          var(--measure);
+    --bg:             transparent;
+
+    --rule-color:     var(--rule);
+    --rule-width:     100%;
+    --rule-thickness: 1px;
+
+    --rule-inset:     calc(var(--pad-top) * var(--pad-scale));
+
+    --text-font:      var(--font-body);
+    --text-size:      var(--fs-body);
+    --text-color:     var(--body);
+    --text-align:     justify;
+    --text-lh:        1.75;
+    --text-weight:    400;
+    --text-gap:       1.25rem;
+
+    --h2-font:        var(--font-head);
+    --h2-size:        var(--fs-section);
+    --h2-color:       var(--heading);
+    --h2-weight:      700;
+    --h2-align:       center;
+    --h2-mb:          2rem;
+
+    --bar-width:      60px;
+    --bar-thickness:  3px;
+    --bar-color:      linear-gradient(135deg, var(--accent) 0%, var(--link) 100%);
+    --bar-gap:        0.8rem;
+    --bar-start:      auto;
+
+    --h3-font:        var(--font-head);
+    --h3-size:        var(--fs-sub);
+    --h3-color:       var(--heading);
+    --h3-weight:      600;
+    --h3-align:       left;
+    --h3-mt:          2.5rem;
+    --h3-mb:          1rem;
+
+    --fig-width:      100%;
+    --fig-mt:         2.5rem;
+    --fig-mb:         2.5rem;
+    --fig-radius:     var(--radius);
+
+    --cap-size:       1.05rem;
+    --cap-color:      var(--body);
+    --cap-align:      justify;
+    --cap-mt:         0.75rem;
+
+    position: relative;
+    background: var(--bg);
+    padding-block: calc(var(--pad-top) * var(--pad-scale))
+                   calc(var(--pad-bottom) * var(--pad-scale));
   }
-  .title {
-    font-family: 'Google Sans', 'Noto Sans', sans-serif;
-    font-size: clamp(1.5rem, 4.2vw, 2.15rem);
-    font-weight: 700;
-    line-height: 1.28;
-    letter-spacing: -0.015em;
-    margin: 0 0 1.6rem;
+
+  .section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(var(--rule-width), calc(100% - 2 * var(--rule-inset)));
+    height: var(--rule-thickness);
+    background: var(--rule-color);
+  }
+  .section.no-rule::before { content: none; }
+
+  .section h2 {
+    font-family: var(--h2-font);
+    font-size: var(--h2-size);
+    font-weight: var(--h2-weight);
+    color: var(--h2-color);
+    text-align: var(--h2-align);
+    line-height: 1.3;
+    margin: 0 0 var(--h2-mb);
+  }
+
+  .section h2::after {
+    content: "";
+    display: block;
+    width: var(--bar-width);
+    height: var(--bar-thickness);
+    background: var(--bar-color);
+    border-radius: 999px;
+    margin-block: var(--bar-gap) 0;
+    margin-inline: var(--bar-start) auto;
+  }
+  .section h3 {
+    font-family: var(--h3-font);
+    font-size: var(--h3-size);
+    font-weight: var(--h3-weight);
+    color: var(--h3-color);
+    text-align: var(--h3-align);
+    line-height: 1.35;
+    margin: var(--h3-mt) 0 var(--h3-mb);
+  }
+
+  .section p {
+    font-family: var(--text-font);
+    font-size: var(--text-size);
+    font-weight: var(--text-weight);
+    color: var(--text-color);
+    line-height: var(--text-lh);
+    text-align: var(--text-align);
+    text-justify: inter-word;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    margin: 0 0 var(--text-gap);
+  }
+  .section p:last-child { margin-bottom: 0; }
+
+  .section figure {
+    max-width: var(--fig-width);
+    margin: var(--fig-mt) auto 0;
+  }
+
+  .section figure:first-child { --fig-mt: 0; }
+  .section figure img,
+  .section figure video {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: var(--fig-radius);
+  }
+  .section figcaption {
+    font-size: var(--cap-size);
+    color: var(--cap-color);
+    text-align: var(--cap-align);
+    line-height: 1.6;
+    margin-top: var(--cap-mt);
+  }
+
+  .hero { text-align: center; }
+  .hero .title {
+    font-family: var(--font-head);
+    font-size: var(--title-size, var(--fs-title));
+    font-weight: var(--title-weight, 800);
+    color: var(--title-color, var(--heading));
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin: 0 0 var(--title-mb, 2rem);
     text-wrap: balance;
   }
-  .title .name { color: var(--accent); }
 
-  .authors {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--ink-soft);
-    margin: 0 0 0.7rem;
+  .hero .authors {
+    font-family: var(--font-head);
+    text-align: center;
+    font-size: var(--authors-size, var(--fs-authors));
+    font-weight: 500;
+    line-height: 1.5;
+    color: var(--heading);
+    margin: 0 0 0.9rem;
   }
-  .venue { margin: 0; }
-  .venue span {
+  .hero .venue { margin: 0; text-align: center; }
+  .hero .venue span {
     display: inline-block;
-    background: var(--accent-bg);
-    color: var(--accent);
-    border-radius: 999px;
-    padding: 0.2rem 0.9rem;
+    background: var(--gray-light);
+    color: var(--muted);
     font-weight: 600;
-    font-size: 0.9rem;
+    border-radius: 999px;
+    padding: 0.25rem 1rem;
+    font-size: 0.875rem;
   }
 
-  /* ---------- coming-soon buttons ---------- */
   .links {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0.6rem;
-    margin-top: 1.9rem;
+    gap: 0.75rem;
+    margin-top: var(--links-mt, 2.5rem);
   }
   .btn {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
+    font-family: var(--font-head);
     border-radius: 999px;
-    padding: 0.5rem 1.15rem;
-    font-size: 0.92rem;
+    padding: 0.55rem 1.35rem;
+    font-size: 0.9375rem;
     font-weight: 600;
-    background: #f1f3f6;
-    color: #9aa3af;
+    line-height: 1.4;
+    background: var(--btn-dark);
+    color: var(--white);
+  }
+  a.btn:hover { text-decoration: none; opacity: 0.85; }
+
+  .btn[aria-disabled="true"] {
+    background: var(--gray-light);
+    color: var(--faint);
     cursor: not-allowed;
     user-select: none;
   }
 
-  /* ---------- sections ---------- */
-  section { padding-block: 1.75rem; }
-  section + section { border-top: 1px solid var(--rule); }
-
-  /* The teaser figure is part of the abstract, not a new topic: no divider,
-     and it sits directly under the text instead of a full section apart. */
-  section.flush {
-    border-top: none;
-    padding-top: 0;
-  }
-
-  h2 {
-    font-family: 'Roboto';
-    font-size: 2.0rem;
-    font-weight: 700;
+  footer {
+    background: var(--bg-soft);
+    border-top: 1px solid var(--border);
+    padding-block: 3rem;
+    font-size: 0.875rem;
+    line-height: 1.7;
+    color: var(--muted);
     text-align: center;
-    margin: 0 0 1.6rem;
+
+    --width: 1000px;
+  }
+  footer p { margin: 0 0 0.5rem; }
+  footer p:last-child { margin-bottom: 0; }
+
+  .hero .title .name {
+    display: inline;
+    font-family: var(--name-font, var(--font-head));
+    color: var(--name-color, var(--link));
+  }
+  .hero .title .subtitle {
+    display: inline;
+    font-size: var(--subtitle-size, var(--fs-subtitle));
+    font-weight: var(--subtitle-weight, 800);
+    color: var(--heading);
+    line-height: 1.3;
+    letter-spacing: -0.01em;
   }
 
-  p { margin: 0 0 1.15rem; }
-  p:last-child { margin-bottom: 0; }
+  .section h3:first-child { margin-top: 0; }
+  .section strong { color: var(--heading); font-weight: 600; }
 
-  /* Body copy is justified. Hyphenation is required, not cosmetic: without it
-     justify opens rivers of whitespace once the column narrows on mobile. */
-  section p {
-    text-align: justify;
+  .section .hl { color: var(--hl-color, var(--link)); font-style: italic; font-weight: 600; }
+
+  .section figure { margin-bottom: var(--fig-mb); }
+  .section figure:last-child { --fig-mb: 0; }
+  .section figcaption {
     text-justify: inter-word;
     -webkit-hyphens: auto;
     hyphens: auto;
   }
 
-  /* ---------- figures: exactly the same box as the text ---------- */
-  figure { margin: 0; }
-  figure img {
-    display: block;
-    width: 100%;
+  .principle {
+    width: fit-content;
     max-width: 100%;
-    height: auto;
+    margin: var(--quote-mt, 1.5rem) auto var(--quote-mb, 2.5rem);
+    padding: 1.4rem 1.5rem;
+    background: var(--quote-bg, var(--gray-light));
+    border-radius: var(--radius);
+    font-family: var(--font-head);
+    font-size: var(--quote-size, 20px);
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--heading);
+    text-align: center;
   }
 
-  /* ---------- video grid (Robotic Application) ---------- */
-  .videos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 1rem;
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem;
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 var(--tags-mb, 2.5rem);
   }
-  .videos video {
-    display: block;
+  .tags li {
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 0.3rem 1rem;
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    color: var(--heading);
+  }
+
+  .table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .results {
     width: 100%;
-    height: auto;
-    border-radius: 8px;
-    background: #000;
+    border-collapse: collapse;
+    font-size: var(--table-size, 0.9375rem);
+    line-height: 1.4;
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+    color: var(--body);
   }
-  .videos figure { margin: 0; }
-  .videos figcaption {
-    font-size: 0.86rem;
-    line-height: 1.55;
-    color: var(--ink-soft);
-    margin-top: 0.55rem;
+  .results th,
+  .results td {
+    padding: 0.6rem 0.85rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
   }
 
-  /* Delete this placeholder once the first video is dropped in. */
-  .video-placeholder {
-    border: 1px dashed #c7d0dc;
-    border-radius: 8px;
-    background: #fafbfc;
-    color: var(--ink-soft);
-    text-align: center;
-    padding: 3rem 1.25rem;
-    font-size: 0.92rem;
+  .results thead th {
+    font-family: var(--font-head);
+    font-weight: 700;
+    color: var(--heading);
+    border-top: 2px solid var(--heading);
+    border-bottom: 1.5px solid var(--heading);
   }
-  .video-placeholder i {
-    display: block;
-    font-size: 1.6rem;
-    color: #c7d0dc;
-    margin-bottom: 0.6rem;
+  .results tbody tr:last-child > * { border-bottom: 2px solid var(--heading); }
+
+  .results th[scope="row"],
+  .results thead th:first-child {
+    text-align: left;
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    background: var(--white);
+  }
+  .results th[scope="row"] { font-weight: 500; color: var(--heading); }
+
+  .results tr.group th {
+    text-align: left;
+    background: var(--bg-soft);
+    color: var(--muted);
+    font-style: italic;
+    font-weight: 600;
+    font-size: 0.875em;
+    padding-block: 0.45rem;
   }
 
-  /* ---------- footer ---------- */
-  footer {
-    background: #f8f9fb;
-    border-top: 1px solid var(--rule);
-    padding-block: 2rem;
-    font-size: 0.86rem;
-    line-height: 1.6;
-    color: var(--ink-soft);
-    text-align: center;
+  .results .ar   { background: var(--bg-soft); }
+  .results .time { border-left: 1px solid var(--border); }
+
+  .results u {
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 3px;
   }
-  footer a { color: var(--accent); }
-  footer p { margin: 0 0 0.5rem; }
+
+  .results tr.ours > * {
+    background: var(--ours-bg, #eef4fd);
+    font-weight: 700;
+    color: var(--heading);
+  }
+  .results tr.ours th[scope="row"] {
+    box-shadow: inset 3px 0 0 var(--link);
+    color: var(--link);
+  }
+
+  .chart-figure {
+    --c-ours:  var(--link);
+    --c-base:  var(--muted);
+
+    --fs-tick:      15px;
+    --fs-axis:      18px;
+    --fs-label:     17px;
+    --fs-ours:      18px;
+    --fs-ours-sub:  14px;
+    --fs-legend:    1.05rem;
+    --fs-tip:       0.8125rem;
+
+    --pt-scale:     1.15;
+    --ours-scale:   1.25;
+  }
+  .chart-legend {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.4rem 1.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0.75rem;
+    font-size: var(--fs-legend);
+    color: var(--body);
+  }
+  .chart-legend li { display: inline-flex; align-items: center; gap: 0.45rem; }
+  .chart-legend svg { width: 14px; height: 14px; overflow: visible; }
+
+  .chart-wrap { position: relative; overflow-x: auto; }
+  .speed-chart { display: block; width: 100%; min-width: 620px; height: auto; }
+  .speed-chart text { font-family: var(--font-head); }
+
+  .speed-chart .grid line { stroke: var(--border); stroke-width: 1; }
+  .speed-chart .axis      { stroke: var(--faint); stroke-width: 1; }
+  .speed-chart .tick text { fill: var(--muted); font-size: var(--fs-tick); font-variant-numeric: tabular-nums; }
+  .speed-chart .ax-title  { fill: var(--body); font-size: var(--fs-axis); font-weight: 600; }
+  .speed-chart .ax-hint   { fill: var(--muted); font-size: var(--fs-axis); }
+
+  .speed-chart .dominated { fill: var(--c-ours); fill-opacity: 0.05; }
+  .speed-chart .guide     { stroke: var(--c-ours); stroke-width: 1; stroke-dasharray: 4 4; opacity: 0.6; }
+
+  .m-object  { fill: var(--white); stroke: var(--c-base); stroke-width: 2; }
+  .m-dataset { fill: var(--c-base); stroke: var(--white); stroke-width: 2; }
+  .m-ours    { fill: var(--c-ours); stroke: var(--white); stroke-width: 2; stroke-linejoin: round; }
+
+  .speed-chart .m-object,
+  .speed-chart .m-dataset,
+  .speed-chart .m-ours {
+    transform-box: fill-box;
+    transform-origin: center;
+    vector-effect: non-scaling-stroke;
+  }
+  .speed-chart .m-object,
+  .speed-chart .m-dataset { transform: scale(var(--pt-scale)); }
+  .speed-chart .m-ours    { transform: scale(var(--ours-scale)); }
+
+  .speed-chart .hit { fill: #fff; fill-opacity: 0; }
+  .speed-chart .pt  { cursor: pointer; outline: none; }
+  .speed-chart .pt:hover .m-object,
+  .speed-chart .pt:focus-visible .m-object  { stroke: var(--heading); }
+  .speed-chart .pt:hover .m-dataset,
+  .speed-chart .pt:focus-visible .m-dataset { fill: var(--heading); }
+  .speed-chart .pt:focus-visible .hit { stroke: var(--link); stroke-width: 1.5; }
+
+  .speed-chart .lbl text {
+    fill: var(--body);
+    font-size: var(--fs-label);
+    paint-order: stroke;
+    stroke: var(--white);
+    stroke-width: 4px;
+    stroke-linejoin: round;
+  }
+  .speed-chart .lbl .lbl-ours { fill: var(--heading); font-size: var(--fs-ours); font-weight: 700; }
+  .speed-chart .lbl .lbl-sub  { fill: var(--muted); font-size: var(--fs-ours-sub); }
+
+  .chart-tip {
+    position: absolute;
+    z-index: 2;
+    pointer-events: none;
+    min-width: 13rem;
+    padding: 0.6rem 0.8rem;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: var(--fs-tip);
+    line-height: 1.5;
+    color: var(--body);
+    text-align: left;
+    white-space: nowrap;
+  }
+  .chart-tip b { color: var(--heading); }
+  .chart-tip .muted { color: var(--muted); }
+  .chart-tip .ds { font-variant-numeric: tabular-nums; }
+
+  .section p.cite-note {
+    display: flex;
+    gap: 0.6rem;
+    align-items: baseline;
+    margin-top: 1rem;
+    padding: 0.75rem 1rem;
+    background: var(--bg-soft);
+    border-left: 3px solid var(--link);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    font-size: 0.9em;
+    color: var(--muted);
+    text-align: left;
+  }
+  .cite-note i { color: var(--link); }
+  .code-block { position: relative; margin-top: 1.5rem; }
+  .code-block pre {
+    margin: 0;
+    padding: 1.25rem 1.5rem;
+    padding-right: 6.5rem;
+    background: var(--gray-light);
+    border-radius: var(--radius);
+    overflow-x: auto;
+    font-family: var(--font-mono);
+    border: 1px solid var(--border);
+    font-size: 0.8125rem;
+    line-height: 1.7;
+    color: var(--heading);
+    text-align: left;
+  }
+  .copy-btn {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--white);
+    color: var(--heading);
+    font-family: var(--font-head);
+    font-size: 0.8125rem;
+    padding: 0.3rem 0.85rem;
+    cursor: pointer;
+  }
+  .copy-btn:hover { border-color: var(--heading); }
+
+  @media (max-width: 900px) {
+    :root {
+      --fs-title:   38px;
+      --fs-subtitle: 24px;
+      --fs-section: 28px;
+      --fs-sub:     22px;
+      --fs-authors: 18px;
+      --pad-scale:  0.78;
+    }
+  }
 
   @media (max-width: 600px) {
-    :root { --gutter: 1rem; }
-    body { font-size: 16px; }
-    .hero { padding-block: 2.5rem 1.75rem; }
-    section { padding-block: 2.25rem; }
-    h2 { font-size: 1.25rem; }
-    .authors { font-size: 1rem; }
-    .btn { padding: 0.45rem 0.95rem; font-size: 0.87rem; }
+    :root {
+      --gutter:     1rem;
+      --fs-title:   30px;
+      --fs-subtitle: 20px;
+      --fs-section: 24px;
+      --fs-sub:     20px;
+      --fs-authors: 17px;
+      --pad-scale:  0.64;
+    }
+    .btn { padding: 0.5rem 1.1rem; font-size: 0.875rem; }
   }
 </style>
 </head>
 
 <body>
 
-<!-- ======================= TITLE / AUTHORS / VENUE ======================= -->
-<header class="hero wrap">
-  <h1 class="title">
-    <span class="name">HACKPose</span>: Hierarchical Axial Cross-attention for
-    Keypoint-based 6D Object Pose Estimation
-  </h1>
+<header class="section hero no-rule" style="--pad-top: 6rem; --pad-bottom: 3.5rem; --width: 1120px;">
+  <div class="wrap">
+    <h1 class="title">
+      <span class="name">HACKPose:</span>
+      <span class="subtitle">Hierarchical Axial Cross-Attention <br> for Keypoint-based 6D Object Pose Estimation</span>
+    </h1>
 
-  <p class="authors">Anonymous Author(s)</p>
-  <p class="venue"><span>Submitting</span></p>
+    <p class="authors">Anonymous Authors</p>
+    <p class="venue"><span>Submitting</span></p>
 
-  <!-- =========================== COMING SOON ===========================
-       All four are placeholders. To enable the paper link post-review:
-         1. place the ANONYMIZED pdf at static/pdfs/hackpose.pdf
-         2. replace the "Paper" span below with:
-            <a class="btn" href="static/pdfs/hackpose.pdf">
-              <i class="fas fa-file-pdf"></i><span>Paper</span></a>
-       Deliberately no href and no PDF path in the live markup: the only
-       compiled PDF available today is the non-anonymized build.
-       TODO: arXiv id and code URL are not available yet. The code link must
-       NOT point at the authors' personal GitHub repository.
-       (Demo videos live in the "Robotic Application" section further down.)
-  -->
-  <nav class="links">
-    <span class="btn" aria-disabled="true"><i class="fas fa-file-pdf"></i>Paper (coming soon)</span>
-    <span class="btn" aria-disabled="true"><i class="fas fa-file-lines"></i>arXiv (coming soon)</span>
-    <span class="btn" aria-disabled="true"><i class="fab fa-github"></i>Code (coming soon)</span>
-  </nav>
+    <nav class="links">
+      <span class="btn" aria-disabled="true"><i class="fas fa-file-pdf"></i>Paper (coming soon)</span>
+      <span class="btn" aria-disabled="true"><i class="fas fa-file-lines"></i>arXiv (coming soon)</span>
+      <span class="btn" aria-disabled="true"><i class="fab fa-github"></i>Code (coming soon)</span>
+    </nav>
+  </div>
 </header>
 
 <main>
 
-  <!-- ============================= ABSTRACT ============================= -->
-  <section class="wrap">
-    <h2>Abstract</h2>
-    <p>
-      Reliable 6D object pose estimation is essential for robotic manipulation,
-      as localization errors propagate to downstream tasks. While recent work
-      increasingly focuses on zero-shot generalization, many industrial and
-      laboratory tasks involve known tools, parts, and workpieces observed under
-      changing viewpoints, clutter, and occlusion. In such settings, pose
-      estimation must be both accurate and efficient for repeated use within the
-      manipulation pipeline. We address this problem through an RGB-D
-      keypoint-voting formulation and introduce HACKPose, which improves both the
-      scene evidence used for voting and the canonical targets being voted for.
-      First, a hierarchical axial cross-attention network progressively models
-      visual&ndash;geometric interactions along the token and channel axes,
-      allowing independently encoded appearance and geometry features to
-      complement each other more effectively. Second, a dual-modality keypoint
-      selection strategy combines visual and geometric saliency with spatial
-      coverage, producing more informative canonical targets. The keypoint
-      selection is performed offline, while online inference retains a compact
-      voting and geometric fitting pipeline. Across five BOP benchmarks,
-      HACKPose achieves the best mean AR of 88.3 while running at 0.18&nbsp;s per
-      input on an NVIDIA RTX&nbsp;3090. Ablations confirm that
-      token&ndash;channel interaction and dual-modality keypoint selection
-      address complementary voting bottlenecks, supporting accurate and efficient
-      known-object pose estimation for dynamic robotic workspaces.
-    </p>
-  </section>
+  <section class="section" id="abstract"
+           style="--width: 950px; --pad-bottom: 5.5rem; --text-size: 1.25rem; --text-lh: 1.8;">
+    <div class="wrap">
+      <h2>Abstract</h2>
+      <p>
+        Reliable 6D object pose estimation of a known object is a key perception
+        capability for robotic manipulation, where localization errors directly
+        affect downstream grasping, alignment, placement, and interaction. While
+        recent work increasingly focuses on zero-shot generalization, many
+        industrial and laboratory tasks involve known tools, parts, and workpieces
+        observed under changing viewpoints, clutter, and occlusion. In such
+        settings, pose estimation must be both accurate and efficient for repeated
+        use within the manipulation pipeline. We address this problem through an
+        RGB-D keypoint-voting formulation and introduce <strong>HACKPose</strong>, which improves
+        both the scene evidence used for voting and the canonical targets being
+        voted for. First, a <em class="hl">hierarchical axial cross-attention network</em>
+        progressively models visual&ndash;geometric interactions along the token
+        and channel axes, allowing independently encoded appearance and geometry
+        features to complement each other more effectively. Second, a
+        <em class="hl">dual-modality keypoint selection strategy</em> combines visual and geometric
+        saliency with spatial coverage, producing more informative canonical
+        targets. The keypoint selection is performed offline, while online
+        inference retains a compact voting and geometric fitting pipeline. Across
+        five BOP benchmarks, <strong>HACKPose</strong> achieves the best mean AR of 88.3 while
+        running at 0.18&nbsp;s per input on an NVIDIA RTX&nbsp;3090. Ablations
+        confirm that token&ndash;channel interaction and dual-modality keypoint
+        selection address complementary voting bottlenecks, supporting accurate
+        and efficient known-object pose estimation for dynamic robotic workspaces.
+      </p>
 
-  <!-- ============================== TEASER ============================== -->
-  <section class="wrap flush">
-    <figure>
-      <img src="static/images/hackpose_intro.svg"
-           alt="HACKPose enriches visual and geometric features with token-wise and channel-wise cross-attention, in contrast to point-wise matching.">
-    </figure>
-  </section>
-
-  <!-- ======================= ROBOTIC APPLICATION ======================= -->
-  <section class="wrap">
-    <h2>Robotic Application</h2>
-
-    <!--
-      ===================================================================
-      DROP YOUR VIDEOS IN HERE
-      -------------------------------------------------------------------
-      1. Put the encoded .mp4 files in  static/videos/
-      2. Delete the <div class="video-placeholder"> block below.
-      3. Uncomment the <div class="videos"> block and duplicate the
-         <figure> for each clip. The grid reflows on its own: two side by
-         side on desktop, one per row under ~700px. No CSS change needed.
-
-      ENCODING — Safari refuses to autoplay a video that still carries an
-      audio track, so the -an flag is not optional:
-
-        ffmpeg -i input.mov \
-               -vf "scale=1280:-2" \
-               -c:v libx264 -crf 28 -preset slow -pix_fmt yuv420p \
-               -movflags +faststart -an \
-               static/videos/demo1.mp4
-
-      Keep "muted playsinline autoplay loop" on every <video> tag or iOS
-      will not start it. Add poster="..." if you want a first frame before
-      the clip loads.
-      ===================================================================
-    -->
-
-    <div class="video-placeholder">
-      <i class="fas fa-video"></i>
-      Robot demonstration videos coming soon.
-    </div>
-
-    <!--
-    <div class="videos">
-      <figure>
-        <video muted playsinline autoplay loop preload="metadata">
-          <source src="static/videos/demo1.mp4" type="video/mp4">
-        </video>
-        <figcaption>TODO: caption for the first clip.</figcaption>
-      </figure>
-      <figure>
-        <video muted playsinline autoplay loop preload="metadata">
-          <source src="static/videos/demo2.mp4" type="video/mp4">
-        </video>
-        <figcaption>TODO: caption for the second clip.</figcaption>
+      <figure style="--fig-width: 80%; --fig-mt: 0.5rem; --cap-mt: 1.5rem; --fig-mb: 0;">
+        <img src="static/images/hackpose_intro.svg"
+             alt="Point-wise RGB-D fusion exchanges information only at aligned locations, whereas HACKPose relates visual and geometric features along the token and channel axes.">
+        <figcaption>
+          <strong>Figure 1.</strong>
+          Conceptual comparison of conventional point-wise RGB-D fusion and the proposed HACKPose. Unlike point-wise fusion at aligned locations, HACKPose progressively captures cross-modal dependencies across token and channel axes for richer visual–geometric interaction.
+        </figcaption>
       </figure>
     </div>
-    -->
-
   </section>
 
-  <!-- ============================== METHOD ============================== -->
-  <section class="wrap">
-    <h2>Method</h2>
-    <p>
-      Given an RGB-D image, HACKPose predicts the rigid transformation that maps
-      an object from its own coordinate frame into the camera frame. It is a
-      keypoint-voting framework that improves both sides of the voting process.
-      On the scene side, point-aligned visual and geometric descriptors are
-      extracted from the RGB image and its point cloud, refined by a hierarchical
-      axial cross-attention network along the token axis and then the channel
-      axis, and merged by an adaptive gated fusion layer into a unified per-point
-      representation. On the model side, canonical 3D keypoints are selected from
-      regions with joint visual&ndash;geometric saliency; this branch is
-      precomputed once per object and adds no online inference cost. At run time,
-      scene points vote for those keypoints through offset regression, MeanShift
-      clustering aggregates the votes, least-squares fitting recovers an initial
-      pose, and ICP refines it into the final 6D pose.
-    </p>
-    <figure>
-      <img src="static/images/overall_pipeline.svg"
-           alt="HACKPose pipeline: independent visual and geometric extractors, hierarchical axial cross-attention fusion, offline saliency-based keypoint selection, then voting, least-squares fitting and ICP refinement.">
-    </figure>
+  <section class="section" id="framework" style="--width: 1200px;">
+    <div class="wrap">
+      <h2>Framework Overview</h2>
+
+      <p>HACKPose is built around a simple principle:</p>
+
+      <blockquote class="principle">
+        better scene evidence + better voting targets &rarr; better keypoint voting
+      </blockquote>
+
+      <figure style="--fig-width: 100%; --fig-mt: 0; --cap-mt: 0rem; --fig-mb: 3.5rem;">
+        <img src="static/images/overall_final_small.svg"
+             alt="HACKPose overview: an online branch that refines RGB-D scene features for keypoint prediction, and an offline branch that selects canonical keypoints from the object model.">
+        <figcaption>
+          <strong>Figure 2.</strong>
+          Overview of HACKPose. Given an RGB-D observation, the online branch extracts aligned visual and geometric descriptors and progressively refines their interaction along the token and channel axes for keypoint offset prediction. Separately, the offline branch uses the CAD model to construct canonical keypoints from joint visual&ndash;geometric saliency while preserving spatial coverage. At inference, scene points vote for these precomputed canonical targets, and the resulting 3D correspondences are used for least-squares pose fitting followed by ICP refinement.
+        </figcaption>
+      </figure>
+
+      <figure style="--fig-width: 100%; --fig-mt: 0; --cap-mt: 0.75rem; --fig-mb: 0;">
+        <img src="static/images/axial_cross_attention.svg"
+             alt="Hierarchical axial cross-attention: visual and geometric features interact across point tokens, then across feature channels, before adaptive gated fusion.">
+        <figcaption>
+          <strong>Figure 3.</strong>
+          Architecture of the hierarchical axial cross-attention module. Visual and geometric embeddings first interact along the token axis, allowing each point in one modality to attend to complementary evidence from the other. The token-refined features are then transposed and processed along the channel axis to model dependencies between visual and geometric feature dimensions. Residual connections, layer normalization, and feed-forward layers are applied at both stages, after which the two refined streams are combined by adaptive gated fusion.
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" id="results" style="--width: 965px;">
+    <div class="wrap">
+      <h2>Benchmark Results</h2>
+      <p>
+        HACKPose is evaluated on five BOP benchmark datasets:
+        <strong>LM-O, T-LESS, TUD-L, IC-BIN, and YCB-V.</strong>
+      </p>
+
+      <figure class="table-figure" style="--fig-mt: 2.5rem; --cap-mt: 0.9rem; --fig-mb: 2.5rem;">
+        <div class="table-wrap">
+          <table class="results">
+            <thead>
+              <tr>
+                <th scope="col">Method</th>
+                <th scope="col">LM-O</th>
+                <th scope="col">T-LESS</th>
+                <th scope="col">TUD-L</th>
+                <th scope="col">IC-BIN</th>
+                <th scope="col">YCB-V</th>
+                <th scope="col" class="ar">AR&nbsp;&uarr;</th>
+                <th scope="col" class="time">Time (s)&nbsp;&darr;</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="group"><th colspan="8" scope="colgroup">Per-object models</th></tr>
+              <tr><th scope="row">Pix2Pose</th><td>58.8</td><td>51.2</td><td>82.0</td><td>39.0</td><td>78.8</td><td class="ar">62.0</td><td class="time">4.84</td></tr>
+              <tr><th scope="row">ZebraPose</th><td>78.0</td><td>86.2</td><td>95.6</td><td>65.4</td><td>89.9</td><td class="ar">83.0</td><td class="time">2.58</td></tr>
+              <tr><th scope="row">GDRNPP</th><td>77.5</td><td>87.4</td><td><u>96.6</u></td><td>72.2</td><td>92.1</td><td class="ar">85.2</td><td class="time">6.26</td></tr>
+              <tr><th scope="row">GPose</th><td>79.4</td><td><u>91.4</u></td><td>96.4</td><td><u>73.7</u></td><td><u>92.8</u></td><td class="ar"><u>86.7</u></td><td class="time">2.67</td></tr>
+              <tr><th scope="row">RDPN6D</th><td>77.6</td><td>76.8</td><td>95.7</td><td>72.0</td><td>88.3</td><td class="ar">82.1</td><td class="time">2.43</td></tr>
+              <tr><th scope="row">HccePose(BF)</th><td><u>80.5</u></td><td>87.9</td><td>94.4</td><td>72.4</td><td>91.1</td><td class="ar">85.3</td><td class="time"><u>0.91</u></td></tr>
+              <tr class="group"><th colspan="8" scope="colgroup">Per-dataset models</th></tr>
+              <tr><th scope="row">Koenig-Hybrid</th><td>63.1</td><td>65.5</td><td>92.0</td><td>43.0</td><td>70.1</td><td class="ar">66.7</td><td class="time"><u>0.63</u></td></tr>
+              <tr><th scope="row">CosyPose</th><td>71.4</td><td>70.1</td><td>93.9</td><td>64.7</td><td>86.1</td><td class="ar">77.2</td><td class="time">13.74</td></tr>
+              <tr><th scope="row">SurfEmb</th><td>75.8</td><td>83.3</td><td>93.3</td><td>65.6</td><td>82.4</td><td class="ar">80.1</td><td class="time">9.05</td></tr>
+              <tr><th scope="row">CIR</th><td>73.4</td><td>77.6</td><td>96.8</td><td>67.6</td><td>89.3</td><td class="ar">81.0</td><td class="time">&ndash;</td></tr>
+              <tr><th scope="row">PFA</th><td>79.7</td><td>85.0</td><td>96.0</td><td>67.6</td><td>88.8</td><td class="ar">83.4</td><td class="time">2.32</td></tr>
+              <tr><th scope="row">RCVPose3D</th><td>72.9</td><td>70.8</td><td>96.6</td><td>73.3</td><td>84.3</td><td class="ar">79.6</td><td class="time">1.34</td></tr>
+              <tr><th scope="row">SCFlow</th><td>80.0</td><td><u>91.2</u></td><td>97.4</td><td>74.1</td><td><u>93.8</u></td><td class="ar">87.3</td><td class="time">1.42</td></tr>
+              <tr><th scope="row">Flose</th><td><u>86.1</u></td><td>86.9</td><td><u>98.8</u></td><td><u>74.8</u></td><td>92.8</td><td class="ar"><u>87.9</u></td><td class="time">1.79</td></tr>
+              <tr class="ours"><th scope="row">HACKPose (ours)</th><td>84.5</td><td>87.3</td><td>98.7</td><td><u>75.8</u></td><td><u>95.8</u></td><td class="ar"><u>88.4</u></td><td class="time"><u>0.18</u></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <figcaption>
+          <strong>Table 1.</strong>
+          Comparison with SOTA methods on five BOP core datasets in terms of Average Recall (AR) and Time (second).
+        </figcaption>
+      </figure>
+
+      <figure class="chart-figure" style="--fig-mt: 2.5rem; --cap-mt: 0.9rem; --fig-mb: 2.5rem;">
+        <ul class="chart-legend" aria-hidden="true">
+          <li><svg viewBox="0 0 14 14"><circle class="m-object" cx="7" cy="7" r="4.5"/></svg>Per-object models</li>
+          <li><svg viewBox="0 0 14 14"><rect class="m-dataset" x="2.5" y="2.5" width="9" height="9" rx="1.5"/></svg>Per-dataset models</li>
+          <li><svg viewBox="0 0 24 24"><polygon class="m-ours" points="12,1 14.7,8.3 22.5,8.6 16.4,13.4 18.5,21 12,16.6 5.5,21 7.6,13.4 1.5,8.6 9.3,8.3"/></svg>HACKPose (ours)</li>
+        </ul>
+        <div class="chart-wrap">
+          <svg class="speed-chart" id="fig4" role="img" aria-labelledby="fig4-title fig4-desc">
+            <title id="fig4-title">Mean AR versus time per input for 14 methods</title>
+            <desc id="fig4-desc">HACKPose sits at 0.18 seconds and 88.3 AR, the top-left corner. All 13 other methods with a reported runtime are both slower and less accurate. Full values are in Table 1.</desc>
+          </svg>
+          <div class="chart-tip" role="tooltip" hidden></div>
+        </div>
+        <figcaption>
+          <strong>Figure 4.</strong>Comparison with SOTA methods on five BOP benchmarks: 
+          Mean AR against Time per input (second, log scale).
+        </figcaption>
+      </figure>
+
+      <script>
+
+      var FIG4 = {
+        width:  960,
+        height: 540,
+        margin: { top: 20, right: 24, bottom: 64, left: 64 },
+
+        x: { min: 0.1, max: 20, ticks: [0.1, 0.2, 0.5, 1, 2, 5, 10, 20],
+             title: 'Time per input (s, log scale)', hint: '← faster' },
+
+        y: { min: 60, max: 90, step: 5,
+             title: 'Mean AR · more accurate →' },
+
+        labels: {
+          'HACKPose (ours)': { dx: 18, dy: 3 },
+          'Flose':           { dx: 10,  dy: -12 },
+          'SCFlow':          { dx: 4,  dy: 24 },
+          'GPose':           { dx: 9,  dy: -9 },
+          'Koenig-Hybrid':   { dx: 11, dy: 5 }
+        },
+
+        data: [
+          ['Pix2Pose',        'Per-object',  62.0,  4.84, 58.8, 51.2, 82.0, 39.0, 78.8],
+          ['ZebraPose',       'Per-object',  83.0,  2.58, 78.0, 86.2, 95.6, 65.4, 89.9],
+          ['GDRNPP',          'Per-object',  85.2,  6.26, 77.5, 87.4, 96.6, 72.2, 92.1],
+          ['GPose',           'Per-object',  86.7,  2.67, 79.4, 91.4, 96.4, 73.7, 92.8],
+          ['RDPN6D',          'Per-object',  82.1,  2.43, 77.6, 76.8, 95.7, 72.0, 88.3],
+          ['HccePose(BF)',    'Per-object',  85.3,  0.91, 80.5, 87.9, 94.4, 72.4, 91.1],
+          ['Koenig-Hybrid',   'Per-dataset', 66.7,  0.63, 63.1, 65.5, 92.0, 43.0, 70.1],
+          ['CosyPose',        'Per-dataset', 77.2, 13.74, 71.4, 70.1, 93.9, 64.7, 86.1],
+          ['SurfEmb',         'Per-dataset', 80.1,  9.05, 75.8, 83.3, 93.3, 65.6, 82.4],
+          ['PFA',             'Per-dataset', 83.4,  2.32, 79.7, 85.0, 96.0, 67.6, 88.8],
+          ['RCVPose3D',       'Per-dataset', 79.6,  1.34, 72.9, 70.8, 96.6, 73.3, 84.3],
+          ['SCFlow',          'Per-dataset', 87.3,  1.42, 80.0, 91.2, 97.4, 74.1, 93.8],
+          ['Flose',           'Per-dataset', 87.9,  1.79, 86.1, 86.9, 98.8, 74.8, 92.8],
+          ['HACKPose (ours)', 'Ours',        88.3,  0.18, 84.5, 87.3, 98.7, 75.8, 95.8]
+        ]
+      };
+
+      (function (C) {
+        var svg = document.getElementById('fig4');
+        var NS = 'http://www.w3.org/2000/svg';
+        var m = C.margin;
+        var X0 = m.left, X1 = C.width - m.right, Y0 = m.top, Y1 = C.height - m.bottom;
+        var lg = function (v) { return Math.log(v) / Math.LN10; };
+        var X = function (t) { return X0 + (lg(t) - lg(C.x.min)) / (lg(C.x.max) - lg(C.x.min)) * (X1 - X0); };
+        var Y = function (a) { return Y0 + (C.y.max - a) / (C.y.max - C.y.min) * (Y1 - Y0); };
+        var inRange = function (d) { return d[3] >= C.x.min && d[3] <= C.x.max && d[2] >= C.y.min && d[2] <= C.y.max; };
+        var r1 = function (v) { return Math.round(v * 10) / 10; };
+
+        function el(tag, attrs, parent, text) {
+          var e = document.createElementNS(NS, tag);
+          for (var k in attrs) e.setAttribute(k, attrs[k]);
+          if (text != null) e.textContent = text;
+          (parent || svg).appendChild(e);
+          return e;
+        }
+
+        svg.setAttribute('viewBox', '0 0 ' + C.width + ' ' + C.height);
+
+        var yTicks = [];
+        for (var a = C.y.min; a <= C.y.max + 1e-9; a += C.y.step) yTicks.push(r1(a));
+        var xTicks = C.x.ticks.filter(function (t) { return t >= C.x.min && t <= C.x.max; });
+        var grid = el('g', { 'class': 'grid' });
+        yTicks.forEach(function (a) { el('line', { x1: X0, x2: X1, y1: Y(a), y2: Y(a) }, grid); });
+        xTicks.forEach(function (t) { el('line', { x1: X(t), x2: X(t), y1: Y0, y2: Y1 }, grid); });
+
+        var ours = C.data.filter(function (d) { return d[1] === 'Ours'; })[0];
+        if (ours && inRange(ours)) {
+          var sx = X(ours[3]), sy = Y(ours[2]);
+          el('rect', { 'class': 'dominated', x: sx, y: sy, width: X1 - sx, height: Y1 - sy });
+          el('line', { 'class': 'guide', x1: X0, x2: sx, y1: sy, y2: sy });
+          el('line', { 'class': 'guide', x1: sx, x2: sx, y1: sy, y2: Y1 });
+        }
+
+        el('line', { 'class': 'axis', x1: X0, x2: X1, y1: Y1, y2: Y1 });
+        var tick = el('g', { 'class': 'tick' });
+        yTicks.forEach(function (a) { el('text', { x: X0 - 10, y: Y(a), 'text-anchor': 'end', dy: '0.32em' }, tick, a); });
+        xTicks.forEach(function (t) { el('text', { x: X(t), y: Y1 + 20, 'text-anchor': 'middle' }, tick, t); });
+        el('text', { 'class': 'ax-title', x: (X0 + X1) / 2, y: C.height - 14, 'text-anchor': 'middle' }, null, C.x.title);
+        el('text', { 'class': 'ax-hint', x: X0, y: C.height - 14 }, null, C.x.hint);
+        el('text', { 'class': 'ax-title', 'text-anchor': 'middle',
+                     transform: 'translate(18 ' + (Y0 + Y1) / 2 + ') rotate(-90)' }, null, C.y.title);
+
+        var pts = el('g', { 'class': 'points' });
+        C.data.slice().sort(function (a, b) { return (a[1] === 'Ours') - (b[1] === 'Ours'); })
+          .forEach(function (d) {
+            if (!inRange(d)) return;
+            var cx = X(d[3]), cy = Y(d[2]), isOurs = d[1] === 'Ours';
+            var g = el('g', { 'class': 'pt', tabindex: 0,
+              'aria-label': d[0] + ': ' + d[2].toFixed(1) + ' AR, ' + d[3].toFixed(2) + ' s' }, pts);
+            g.dataset.name = d[0]; g.dataset.group = d[1];
+            g.dataset.ar = d[2].toFixed(1); g.dataset.time = d[3] < 1 ? d[3].toFixed(2) : String(d[3]);
+            g.dataset.ds = d.slice(4).map(function (v) { return v.toFixed(1); }).join(' / ');
+            el('circle', { 'class': 'hit', cx: cx, cy: cy, r: isOurs ? 15 : 13 }, g);
+            if (isOurs) {
+              var p = [];
+              for (var i = 0; i < 10; i++) {
+                var r = i % 2 ? 4.6 : 11, ang = -Math.PI / 2 + i * Math.PI / 5;
+                p.push(r1(cx + r * Math.cos(ang)) + ',' + r1(cy + r * Math.sin(ang)));
+              }
+              el('polygon', { 'class': 'm-ours', points: p.join(' ') }, g);
+            } else if (d[1] === 'Per-object') {
+              el('circle', { 'class': 'm-object', cx: cx, cy: cy, r: 4.5 }, g);
+            } else {
+              el('rect', { 'class': 'm-dataset', x: cx - 4.5, y: cy - 4.5, width: 9, height: 9, rx: 1.5 }, g);
+            }
+          });
+
+        var lbl = el('g', { 'class': 'lbl' });
+        C.data.forEach(function (d) {
+          var o = C.labels[d[0]];
+          if (!o || !inRange(d)) return;
+          var x = X(d[3]) + o.dx, y = Y(d[2]) + o.dy;
+          if (d[1] === 'Ours') {
+            el('text', { 'class': 'lbl-ours', x: x, y: y }, lbl, d[0]);
+            el('text', { 'class': 'lbl-sub', x: x, y: y + 17 }, lbl,
+               d[2].toFixed(1) + ' AR · ' + d[3].toFixed(2) + ' s');
+          } else {
+            el('text', { x: x, y: y }, lbl, d[0]);
+          }
+        });
+
+        var wrap = svg.parentNode, tip = wrap.querySelector('.chart-tip');
+        var names = 'LM-O / T-LESS / TUD-L / IC-BIN / YCB-V';
+        function show(pt) {
+          var d = pt.dataset;
+          tip.innerHTML =
+            '<b>' + d.name + '</b> <span class="muted">' +
+            (d.group === 'Ours' ? '' : '&middot; ' + d.group) + '</span><br>' +
+            'AR <b>' + d.ar + '</b> &middot; ' + d.time + '&nbsp;s per input<br>' +
+            '<span class="muted">' + names + '</span><br>' +
+            '<span class="ds">' + d.ds + '</span>';
+          tip.hidden = false;
+          var w = wrap.getBoundingClientRect();
+          var h = pt.querySelector('.hit').getBoundingClientRect();
+          var x = h.left - w.left + wrap.scrollLeft + h.width / 2;
+          var tw = tip.offsetWidth, th = tip.offsetHeight;
+          var left = Math.min(Math.max(x - tw / 2, wrap.scrollLeft + 4),
+                              wrap.scrollLeft + wrap.clientWidth - tw - 4);
+          var top = h.top - w.top - th - 8;
+          if (top < 0) top = h.bottom - w.top + 8;
+          tip.style.left = left + 'px';
+          tip.style.top = top + 'px';
+        }
+        function hide() { tip.hidden = true; }
+        pts.querySelectorAll('.pt').forEach(function (pt) {
+          pt.addEventListener('pointerenter', function () { show(pt); });
+          pt.addEventListener('pointerleave', hide);
+          pt.addEventListener('focus', function () { show(pt); });
+          pt.addEventListener('blur', hide);
+        });
+      })(FIG4);
+      </script>
+
+      <p>
+        The results remain strong across textured and textureless objects,
+        symmetric and asymmetric shapes, heavy clutter, occlusion, multiple
+        instances, and changing lighting conditions. The complete HACKPose
+        pose-estimation pipeline runs at <strong>0.18s</strong> per input
+        on an NVIDIA RTX&nbsp;3090.
+      </p>
+    </div>
+  </section>
+
+  <section class="section" id="deployment" style="--width: 965px;">
+    <div class="wrap">
+      <h2>HACKPose Deployment on Robot</h2>
+      <p>
+        HACKPose is designed as a perception front-end for known-object
+        localization in robotic workspaces. Its combination of <strong>high pose accuracy</strong> and <strong>low inference latency</strong> is
+        particularly relevant to downstream tasks such as:
+      </p>
+
+      <ul class="tags">
+        <li>Pick & Place</li>
+        <li>Bin Picking</li>
+        <li>Inspection</li>
+        <li>Object Handover</li>
+        <li>Assembly</li>
+        <li>Manipulation Planning</li>
+      </ul>
+
+      <figure style="--fig-width: 800px; --fig-mt: 2rem; --fig-mb: 2.5rem;">
+        <video controls autoplay muted loop playsinline preload="metadata"
+               aria-label="HACKPose robotic manipulation demonstration">
+          <source src="static/videos/hackpose_demo.mp4" type="video/mp4">
+        </video>
+      </figure>
+
+      <p>
+        Real-world deployment on a humanoid robot: a ZED X Mini camera mounted
+        on the robot's head detects and tracks the object pose in real time.
+        Under <strong>partial occlusion</strong>, the pose remains detectable
+        while only part of the object is visible. For <strong>fast
+        recovery</strong>, when the camera view is completely blocked and the
+        object is lost, the pose is recovered quickly once the object becomes
+        visible again.
+      </p>
+
+    </div>
+  </section>
+
+  <section class="section" id="citation" style="--width: 965px;">
+    <div class="wrap">
+      <h2>Citation</h2>
+      <p>If you find HACKPose useful in your research, please consider citing:</p>
+      <p class="cite-note">
+        <i class="fas fa-circle-info"></i>
+        Submitted to ICRA 2027 and currently under double-anonymous review.
+        The entry below will be updated with authors and proceedings details
+        after the decision.
+      </p>
+
+      <div class="code-block">
+        <button class="copy-btn" type="button" data-target="bibtex" aria-label="Copy BibTeX">
+          <i class="far fa-copy"></i><span class="copy-label">Copy</span>
+        </button>
+<pre id="bibtex"><code>@misc{hackpose2026,
+  title  = {HACKPose: Hierarchical Axial Cross-Attention for Keypoint-based 6D Object Pose Estimation},
+  author = {Anonymous},
+  note   = {Submitted to the 2027 IEEE International Conference on Robotics and Automation (ICRA), under review},
+  year   = {2026}
+}</code></pre>
+      </div>
+    </div>
   </section>
 
 </main>
 
-<!-- ============================== FOOTER ============================== -->
 <footer>
   <div class="wrap">
     <p>
@@ -382,6 +978,32 @@
     <p>Paper under double-anonymous review. Author information withheld.</p>
   </div>
 </footer>
+
+<script>
+  document.querySelectorAll('.copy-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var code  = document.getElementById(btn.dataset.target);
+      var label = btn.querySelector('.copy-label');
+      var done  = function () {
+        label.textContent = 'Copied';
+        setTimeout(function () { label.textContent = 'Copy'; }, 1600);
+      };
+
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(code.textContent).then(done);
+        return;
+      }
+      var range = document.createRange();
+      range.selectNodeContents(code);
+      var sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
+      document.execCommand('copy');
+      sel.removeAllRanges();
+      done();
+    });
+  });
+</script>
 
 </body>
 </html>

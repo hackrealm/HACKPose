@@ -1,0 +1,1799 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="360mm"
+   height="130mm"
+   viewBox="0 0 360 130"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.4 (1:1.4.4+202605061436+dcaf3e7d9e)"
+   sodipodi:docname="axial_cross_attention.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="true"
+     inkscape:zoom="1.0482468"
+     inkscape:cx="695.44691"
+     inkscape:cy="305.74861"
+     inkscape:window-width="2494"
+     inkscape:window-height="1371"
+     inkscape:window-x="2626"
+     inkscape:window-y="32"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer6">
+    <inkscape:grid
+       id="grid1"
+       units="mm"
+       originx="0"
+       originy="0"
+       spacingx="0.99999997"
+       spacingy="0.99999997"
+       empcolor="#0099e5"
+       empopacity="0.30196078"
+       color="#0099e5"
+       opacity="0.14901961"
+       empspacing="5"
+       enabled="true"
+       visible="true"
+       dotted="false" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1">
+    <linearGradient
+       id="linearGradient180"
+       inkscape:collect="always">
+      <stop
+         style="stop-color:#c2d8d3;stop-opacity:1;"
+         offset="0"
+         id="stop179" />
+      <stop
+         style="stop-color:#8fa8a2;stop-opacity:0;"
+         offset="1"
+         id="stop180" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient162"
+       inkscape:collect="always">
+      <stop
+         style="stop-color:#c2d8d3;stop-opacity:1;"
+         offset="0"
+         id="stop162" />
+      <stop
+         style="stop-color:#8fa8a2;stop-opacity:0;"
+         offset="1"
+         id="stop163" />
+    </linearGradient>
+    <linearGradient
+       id="swatch161">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop161" />
+    </linearGradient>
+    <marker
+       style="overflow:visible"
+       id="marker144"
+       refX="2.75"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Triangle arrow"
+       markerWidth="0.75"
+       markerHeight="0.75"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path144" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Triangle"
+       refX="2.75"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path135" />
+    </marker>
+    <rect
+       x="562.5462"
+       y="59.206409"
+       width="86.164948"
+       height="47.092133"
+       id="rect70" />
+    <rect
+       x="575.34302"
+       y="59.206409"
+       width="105.2748"
+       height="43.850281"
+       id="rect69" />
+    <rect
+       x="578.073"
+       y="65.519485"
+       width="91.624908"
+       height="34.636604"
+       id="rect68" />
+    <rect
+       x="249.11055"
+       y="13.649893"
+       width="124.89652"
+       height="158.33876"
+       id="rect67" />
+    <rect
+       x="248.7693"
+       y="11.602409"
+       width="137.52267"
+       height="171.30617"
+       id="rect66" />
+    <rect
+       x="395.50565"
+       y="141.10577"
+       width="26.958538"
+       height="11.943656"
+       id="rect1" />
+    <rect
+       x="419.05173"
+       y="144.68887"
+       width="16.81958"
+       height="8.8566103"
+       id="rect24" />
+    <rect
+       x="365.98776"
+       y="34.124733"
+       width="97.084862"
+       height="17.23299"
+       id="rect23" />
+    <rect
+       x="495.3205"
+       y="218.14235"
+       width="32.077248"
+       height="12.11428"
+       id="rect22" />
+    <rect
+       x="508.6568"
+       y="222.95963"
+       width="89.76297"
+       height="48.742256"
+       id="rect21" />
+    <rect
+       x="428.60663"
+       y="84.970581"
+       width="75.756905"
+       height="32.418495"
+       id="rect10" />
+    <marker
+       style="overflow:visible"
+       id="Triangle-3"
+       refX="2.75"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path135-4" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker144-0"
+       refX="2.75"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path144-3" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker144-6"
+       refX="2.75"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path144-6" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Triangle-2"
+       refX="2.75"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path135-6" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker144-02"
+       refX="2.75"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path144-7" />
+    </marker>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient162"
+       id="linearGradient163"
+       x1="192.79721"
+       y1="56.666534"
+       x2="199.1972"
+       y2="56.666534"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-12.092967,-6.1555682)" />
+    <marker
+       style="overflow:visible"
+       id="marker144-69"
+       refX="2.75"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path144-4" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Triangle-22"
+       refX="2.75"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path135-64" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker144-8"
+       refX="2.75"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path144-8" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Triangle-6"
+       refX="2.75"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path135-8" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Triangle-5-6"
+       refX="2.75"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path135-1-8" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Triangle-9"
+       refX="2.75"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path135-0" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Triangle-26"
+       refX="2.75"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path135-5" />
+    </marker>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient180"
+       id="linearGradient174"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-121.49375,-380.33231)"
+       x1="192.79721"
+       y1="56.666534"
+       x2="199.1972"
+       y2="56.666534"
+       spreadMethod="pad" />
+    <marker
+       style="overflow:visible"
+       id="Triangle-0"
+       refX="2.75"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path135-7" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Triangle-5"
+       refX="2.75"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path135-67" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker144-4"
+       refX="2.75"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path144-74" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Triangle-4"
+       refX="2.75"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path135-51" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Triangle-4-6"
+       refX="2.75"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path135-51-0" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Triangle-58"
+       refX="2.75"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path135-43" />
+    </marker>
+  </defs>
+  <g
+     inkscape:groupmode="layer"
+     id="layer8"
+     inkscape:label="dash"
+     transform="translate(4e-7,-20)">
+    <path
+       style="fill:none;fill-opacity:1;stroke:#2d7a3e;stroke-width:0.35;stroke-linejoin:miter;stroke-dasharray:1.75, 1.225;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker144)"
+       d="m 70,62.555518 c 46.00001,0.01598 46.00276,32.499992 46.00279,54.002792"
+       id="path183"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#2d7a3e;stroke-width:0.349999;stroke-linejoin:miter;stroke-dasharray:1.74999, 1.225;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle)"
+       d="m 70,74.555518 c 8.002786,10e-7 8.002762,20.499992 8.002786,42.002792"
+       id="path184"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#c0392b;stroke-width:0.35;stroke-linejoin:miter;stroke-dasharray:1.75, 1.225;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker144)"
+       d="m 70,107.55831 c 46.00001,-0.016 46.00276,-32.499992 46.00279,-54.002791"
+       id="path185"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#c0392b;stroke-width:0.349999;stroke-linejoin:miter;stroke-dasharray:1.74999, 1.225;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle)"
+       d="m 70,95.558309 c 8.002786,0 8.002762,-20.499989 8.002786,-42.00279"
+       id="path186"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#2d7a3e;stroke-width:0.349999;stroke-linejoin:miter;stroke-dasharray:1.74999, 1.225;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle)"
+       d="m 210,50.555698 c 46.00278,-0.09077 46.00557,34.399999 46.00557,77.900002"
+       id="path187"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#2d7a3e;stroke-width:0.349999;stroke-linejoin:miter;stroke-dasharray:1.74999, 1.225;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle)"
+       d="m 210,62.555851 c 8.00277,-0.1 8.00277,22.399999 8.00276,65.902789"
+       id="path188"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#c0392b;stroke-width:0.349978;stroke-linejoin:miter;stroke-dasharray:1.74988, 1.22493;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle-58)"
+       d="m 210,119.45077 c 45.99996,0.0907 46.00275,-34.397907 46.00275,-77.895251"
+       id="path187-3"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#c0392b;stroke-width:0.349485;stroke-linejoin:miter;stroke-dasharray:1.74741, 1.2232;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle-58)"
+       d="m 210,107.36143 c 7.99101,0.0999 7.99101,-22.367069 7.99099,-65.805911"
+       id="path188-8"
+       sodipodi:nodetypes="cc" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="blocks"
+     transform="translate(4e-7,-20)">
+    <g
+       id="g66">
+      <text
+         xml:space="preserve"
+         transform="scale(0.26458333)"
+         id="text66"
+         style="font-size:6.93333px;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros, Normal';white-space:pre;shape-inside:url(#rect66);display:inline;fill:#000000;stroke-width:1.51181;stroke-linejoin:round" />
+    </g>
+    <g
+       id="g156"
+       transform="translate(0,-4.953724)">
+      <rect
+         style="fill:#cfe0f5;fill-opacity:1;stroke:#6b96d1;stroke-width:0.4;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         id="rect80"
+         width="6"
+         height="25"
+         x="156.99724"
+         y="43.009243"
+         rx="1.5" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.9986px;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:0.4;stroke-linejoin:round"
+         x="-58.444878"
+         y="161.09023"
+         id="text80"
+         transform="rotate(-90)"><tspan
+           sodipodi:role="line"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.9986px;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.4"
+           x="-58.444878"
+           y="161.09023"
+           id="tspan80">FFN</tspan></text>
+    </g>
+    <g
+       id="sym_add"
+       transform="translate(-12.002745,35.562252)">
+      <circle
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.35;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         id="path84"
+         cx="150"
+         cy="15.000001"
+         r="3" />
+      <path
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.336489;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         d="m 150,11.992113 v 6.007886"
+         id="path85" />
+      <path
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.336268;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         d="m 147,15.000001 h 6"
+         id="path86" />
+    </g>
+    <g
+       id="g88"
+       transform="rotate(-45,106.59676,180.68779)" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#vis_QKV"
+       id="vis_QKV_2"
+       transform="translate(140.00274,12)" />
+    <g
+       id="g123"
+       transform="translate(-6.002765,20.055521)">
+      <rect
+         style="fill:#d5f0d0;fill-opacity:1;stroke:#4a9c5d;stroke-width:0.4;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         id="rect2"
+         width="20"
+         height="10"
+         x="56"
+         y="25.499998"
+         rx="1.5" />
+      <use
+         x="0"
+         y="0"
+         xlink:href="#rect2"
+         id="use5"
+         transform="translate(0,24)" />
+      <use
+         x="0"
+         y="0"
+         xlink:href="#use5"
+         id="use6"
+         transform="translate(0,-12)" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:pre;inline-size:14.6928;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.4;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         x="113.2947"
+         y="39.423363"
+         id="text24"
+         transform="translate(-47.35701,-9.94077)"><tspan
+           x="113.2947"
+           y="39.423363"
+           id="tspan30">Geometric<tspan
+   y="39.423363"
+   id="tspan31"> </tspan></tspan><tspan
+           x="113.2947"
+           y="42.951136"
+           id="tspan34">Query <tspan
+   style="font-family:'TeX Gyre Termes Math';-inkscape-font-specification:'TeX Gyre Termes Math'"
+   id="tspan32">Q</tspan><tspan
+   style="font-size:65%;font-family:'TeX Gyre Termes Math';-inkscape-font-specification:'TeX Gyre Termes Math';baseline-shift:sub"
+   id="tspan33">g</tspan></tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:pre;inline-size:14.6928;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.4;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         x="113.2947"
+         y="39.423363"
+         id="text18"
+         transform="translate(-47.35701,13.884675)"><tspan
+           x="113.2947"
+           y="39.423363"
+           id="tspan35">Geometric<tspan
+   y="39.423363"
+   id="tspan36"> </tspan></tspan><tspan
+           x="113.2947"
+           y="42.951136"
+           id="tspan39">Key <tspan
+   style="font-family:'TeX Gyre Termes Math';-inkscape-font-specification:'TeX Gyre Termes Math'"
+   id="tspan37">K</tspan><tspan
+   style="font-size:65%;font-family:'TeX Gyre Termes Math';-inkscape-font-specification:'TeX Gyre Termes Math';baseline-shift:sub"
+   id="tspan38">g</tspan></tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:pre;inline-size:14.6928;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.4;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         x="113.2947"
+         y="39.423363"
+         id="text22"
+         transform="translate(-47.35701,1.884675)"><tspan
+           x="113.2947"
+           y="39.423363"
+           id="tspan40">Geometric<tspan
+   y="39.423363"
+   id="tspan41"> </tspan></tspan><tspan
+           x="113.2947"
+           y="42.951136"
+           id="tspan44">Value <tspan
+   style="font-family:'TeX Gyre Termes Math';-inkscape-font-specification:'TeX Gyre Termes Math'"
+   id="tspan42">V</tspan><tspan
+   style="font-size:65%;font-family:'TeX Gyre Termes Math';-inkscape-font-specification:'TeX Gyre Termes Math';baseline-shift:sub"
+   id="tspan43">g</tspan></tspan></text>
+    </g>
+    <g
+       id="g128"
+       transform="translate(-0.002765,20.055521)">
+      <rect
+         style="fill:#1b7742;fill-opacity:1;stroke:#0f4526;stroke-width:0.4;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         id="rect44"
+         width="8"
+         height="40"
+         x="15"
+         y="22.499998"
+         rx="1.5" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.99861px;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.4;stroke-linejoin:round"
+         x="-58.446606"
+         y="19.790134"
+         id="text71"
+         transform="rotate(-90)"><tspan
+           sodipodi:role="line"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.99861px;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.4"
+           x="-58.446606"
+           y="19.790134"
+           id="tspan72">Geometric Embedding</tspan></text>
+    </g>
+    <g
+       id="g102"
+       transform="translate(-5.002765,27.555521)">
+      <rect
+         style="fill:#cfe0f5;fill-opacity:1;stroke:#6b96d1;stroke-width:0.4;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         id="rect78"
+         width="6"
+         height="25"
+         x="33"
+         y="22.499998"
+         rx="1.5" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.9986px;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:0.4;stroke-linejoin:round"
+         x="-42.274605"
+         y="36.766148"
+         id="text78"
+         transform="rotate(-90)"><tspan
+           sodipodi:role="line"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.9986px;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.4"
+           x="-42.274605"
+           y="36.766148"
+           id="tspan78">Linear Proj</tspan></text>
+    </g>
+    <g
+       id="g103"
+       transform="translate(-5.002765,27.555521)">
+      <rect
+         style="fill:#cfe0f5;fill-opacity:1;stroke:#6b96d1;stroke-width:0.4;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         id="rect79"
+         width="6"
+         height="25"
+         x="44"
+         y="22.499998"
+         rx="1.5" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.9986px;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:0.4;stroke-linejoin:round"
+         x="-42.349567"
+         y="47.766144"
+         id="text79"
+         transform="rotate(-90)"><tspan
+           sodipodi:role="line"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.9986px;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.4"
+           x="-42.349567"
+           y="47.766144"
+           id="tspan79">LayerNorm</tspan></text>
+    </g>
+    <g
+       id="g176"
+       transform="translate(0,-4.944481)">
+      <rect
+         style="fill:#8fd48a;fill-opacity:1;stroke:#3d8c4f;stroke-width:0.4;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         id="rect4"
+         width="22"
+         height="15"
+         x="85.997246"
+         y="48.002789"
+         rx="1.5" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;line-height:1.5;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.4;stroke-linejoin:round"
+         x="97.029701"
+         y="54.419056"
+         id="text89"><tspan
+           sodipodi:role="line"
+           id="tspan89"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;line-height:1.5;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.4"
+           x="97.029701"
+           y="54.419056">Cross-Modal</tspan><tspan
+           sodipodi:role="line"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;line-height:1.5;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.4"
+           x="97.029701"
+           y="58.652386"
+           id="tspan90">Attention</tspan></text>
+    </g>
+    <g
+       id="sym_mul"
+       transform="rotate(-45,156.9213,119.69418)">
+      <circle
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.35;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         id="circle124"
+         cx="150"
+         cy="15.000001"
+         r="3" />
+      <path
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.336489;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         d="m 150,11.992113 v 6.007886"
+         id="path125" />
+      <path
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.336268;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         d="m 147,15.000001 h 6"
+         id="path126" />
+    </g>
+    <use
+       x="0"
+       y="0"
+       xlink:href="#use129"
+       id="use130"
+       transform="translate(-0.002776,-69.000002)" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#g102"
+       id="use132"
+       transform="translate(96.00002,-11.997211)" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#g103"
+       id="use133"
+       transform="translate(107.00003,-11.993266)" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#sym_add"
+       id="use134"
+       transform="translate(32.999978,-0.002794)" />
+    <g
+       id="g156-9"
+       transform="translate(140.00276,-4.953724)">
+      <rect
+         style="fill:#cfe0f5;fill-opacity:1;stroke:#6b96d1;stroke-width:0.4;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         id="rect80-1"
+         width="6"
+         height="25"
+         x="156.99724"
+         y="43.009243"
+         rx="1.5" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.9986px;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:0.4;stroke-linejoin:round"
+         x="-58.444878"
+         y="161.09023"
+         id="text80-0"
+         transform="rotate(-90)"><tspan
+           sodipodi:role="line"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.9986px;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.4"
+           x="-58.444878"
+           y="161.09023"
+           id="tspan80-75">FFN</tspan></text>
+    </g>
+    <g
+       id="sym_add-8"
+       transform="translate(128.00001,35.562252)">
+      <circle
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.35;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         id="path84-7"
+         cx="150"
+         cy="15.000001"
+         r="3" />
+      <path
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.336489;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         d="m 150,11.992113 v 6.007886"
+         id="path85-0" />
+      <path
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.336268;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         d="m 147,15.000001 h 6"
+         id="path86-4" />
+    </g>
+    <g
+       id="g139-8"
+       transform="translate(139.99999,10.552727)">
+      <rect
+         style="fill:#8fd48a;fill-opacity:1;stroke:#3d8c4f;stroke-width:0.4;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         id="rect4-0"
+         width="22"
+         height="15"
+         x="86.000008"
+         y="20.502792"
+         rx="1.5" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;line-height:1.5;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.4;stroke-linejoin:round"
+         x="97.032463"
+         y="26.91906"
+         id="text89-4"><tspan
+           sodipodi:role="line"
+           id="tspan89-2"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;line-height:1.5;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.4"
+           x="97.032463"
+           y="26.91906">Cross-Modal</tspan><tspan
+           sodipodi:role="line"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;line-height:1.5;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.4"
+           x="97.032463"
+           y="31.15239"
+           id="tspan90-9">Attention</tspan></text>
+    </g>
+    <g
+       id="sym_mul-6"
+       transform="rotate(-45,212.43739,-55.304098)">
+      <circle
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.35;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         id="circle124-1"
+         cx="150"
+         cy="15.000001"
+         r="3" />
+      <path
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.336489;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         d="m 150,11.992113 v 6.007886"
+         id="path125-0" />
+      <path
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.336268;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         d="m 147,15.000001 h 6"
+         id="path126-4" />
+    </g>
+    <use
+       x="0"
+       y="0"
+       xlink:href="#use129"
+       id="use130-2"
+       transform="translate(139.99998,-81.002793)" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#g102"
+       id="use132-2"
+       transform="translate(236.00277,-11.997211)" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#g103"
+       id="use133-2"
+       transform="translate(247.00278,-11.993266)" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#sym_add-8"
+       id="use134-0"
+       transform="translate(32.999973,-0.002794)" />
+    <g
+       id="g156-9-0"
+       transform="translate(140.00555,64.046276)">
+      <rect
+         style="fill:#cfe0f5;fill-opacity:1;stroke:#6b96d1;stroke-width:0.4;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         id="rect80-1-2"
+         width="6"
+         height="25"
+         x="156.99724"
+         y="43.009243"
+         rx="1.5" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.9986px;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:0.4;stroke-linejoin:round"
+         x="-58.444878"
+         y="161.09023"
+         id="text80-0-8"
+         transform="rotate(-90)"><tspan
+           sodipodi:role="line"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.9986px;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.4"
+           x="-58.444878"
+           y="161.09023"
+           id="tspan80-75-3">FFN</tspan></text>
+    </g>
+    <g
+       id="sym_add-8-8"
+       transform="translate(128.0028,104.56225)">
+      <circle
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.35;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         id="path84-7-0"
+         cx="150"
+         cy="15.000001"
+         r="3" />
+      <path
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.336489;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         d="m 150,11.992113 v 6.007886"
+         id="path85-0-4" />
+      <path
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.336268;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         d="m 147,15.000001 h 6"
+         id="path86-4-0" />
+    </g>
+    <g
+       id="sym_mul-6-9"
+       transform="rotate(-45,324.69972,-8.8074579)">
+      <circle
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.35;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         id="circle124-1-1"
+         cx="150"
+         cy="15.000001"
+         r="3" />
+      <path
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.336489;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         d="m 150,11.992113 v 6.007886"
+         id="path125-0-9" />
+      <path
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.336268;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         d="m 147,15.000001 h 6"
+         id="path126-4-6" />
+    </g>
+    <use
+       x="0"
+       y="0"
+       xlink:href="#use129"
+       id="use130-2-2"
+       transform="translate(140.00277,11.997207)" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#g102"
+       id="use132-2-5"
+       transform="translate(236.00556,57.002789)" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#g103"
+       id="use133-2-4"
+       transform="translate(247.00557,57.006734)" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#sym_add-8-8"
+       id="use134-0-4"
+       transform="translate(32.999975,-0.0027944)" />
+    <g
+       id="g140"
+       transform="translate(2.3e-5,22.058312)">
+      <rect
+         style="fill:#f2b8bd;fill-opacity:1;stroke:#c96f7a;stroke-width:0.4;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         id="rect90"
+         width="22"
+         height="15"
+         x="86"
+         y="90"
+         rx="1.5" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;line-height:1.5;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.4;stroke-linejoin:round"
+         x="97.032455"
+         y="96.416267"
+         id="text92"><tspan
+           sodipodi:role="line"
+           id="tspan91"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;line-height:1.5;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.4"
+           x="97.032455"
+           y="96.416267">Cross-Modal</tspan><tspan
+           sodipodi:role="line"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;line-height:1.5;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.4"
+           x="97.032455"
+           y="100.6496"
+           id="tspan92">Attention</tspan></text>
+    </g>
+    <g
+       id="vis_QKV"
+       transform="translate(-0.002765,70.555521)"
+       inkscape:label="vis_QKV">
+      <g
+         id="g39"
+         transform="translate(-5.966846,-49.44356)">
+        <rect
+           style="fill:#fad4d4;fill-opacity:1;stroke:#d97b7b;stroke-width:0.4;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+           id="rect6"
+           width="20"
+           height="10"
+           x="55.966846"
+           y="69.443558"
+           rx="1.5" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:pre;inline-size:14.6928;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.4;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+           x="113.2947"
+           y="39.423363"
+           id="text29"
+           transform="translate(-47.3606,33.977387)"><tspan
+             x="113.2947"
+             y="39.423363"
+             id="tspan45">Visual
+</tspan><tspan
+             x="113.2947"
+             y="42.951136"
+             id="tspan48">Key <tspan
+   style="font-family:'TeX Gyre Termes Math';-inkscape-font-specification:'TeX Gyre Termes Math'"
+   id="tspan46">K</tspan><tspan
+   style="font-size:65%;font-family:'TeX Gyre Termes Math';-inkscape-font-specification:'TeX Gyre Termes Math';baseline-shift:sub"
+   id="tspan47">v</tspan></tspan></text>
+      </g>
+      <use
+         x="0"
+         y="0"
+         xlink:href="#use11"
+         id="use12"
+         transform="translate(0,12)" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:pre;inline-size:14.6928;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.4;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         x="113.2947"
+         y="39.423363"
+         id="text33"
+         transform="translate(-53.189635,8.533827)"><tspan
+           x="113.2947"
+           y="39.423363"
+           id="tspan49">Visual
+</tspan><tspan
+           x="113.2947"
+           y="42.951136"
+           id="tspan52">Query <tspan
+   style="font-family:'TeX Gyre Termes Math';-inkscape-font-specification:'TeX Gyre Termes Math'"
+   id="tspan50">Q</tspan><tspan
+   style="font-size:65%;font-family:'TeX Gyre Termes Math';-inkscape-font-specification:'TeX Gyre Termes Math';baseline-shift:sub"
+   id="tspan51">v</tspan></tspan></text>
+      <use
+         x="0"
+         y="0"
+         xlink:href="#rect6"
+         id="use11"
+         transform="translate(-5.966846,-37.44356)" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:pre;inline-size:14.6928;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.4;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         x="113.2947"
+         y="39.423363"
+         id="text37"
+         transform="translate(-53.316158,-3.453616)"><tspan
+           x="113.2947"
+           y="39.423363"
+           id="tspan53">Visual<tspan
+   y="39.423363"
+   id="tspan54"> </tspan></tspan><tspan
+           x="113.2947"
+           y="42.951136"
+           id="tspan57">Value <tspan
+   style="font-family:'TeX Gyre Termes Math';-inkscape-font-specification:'TeX Gyre Termes Math'"
+   id="tspan55">V</tspan><tspan
+   style="font-size:65%;font-family:'TeX Gyre Termes Math';-inkscape-font-specification:'TeX Gyre Termes Math';baseline-shift:sub"
+   id="tspan56">v</tspan></tspan></text>
+    </g>
+    <g
+       id="Vis Emb"
+       transform="translate(-20.786269,32.586849)">
+      <rect
+         style="fill:#8b1a1a;fill-opacity:1;stroke:#5c1010;stroke-width:0.4;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         id="rect73"
+         width="8"
+         height="40"
+         x="35.783504"
+         y="54.96867"
+         rx="1.5" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.99861px;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.4;stroke-linejoin:round"
+         x="-87.897171"
+         y="40.573639"
+         id="text73"
+         transform="rotate(-90)"><tspan
+           sodipodi:role="line"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.99861px;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.4"
+           x="-87.897171"
+           y="40.573639"
+           id="tspan73">Visual Embedding</tspan></text>
+    </g>
+    <g
+       id="use107"
+       transform="translate(-3.002765,67.555521)">
+      <g
+         id="g130"
+         transform="translate(-2,4.9999997)">
+        <rect
+           style="fill:#cfe0f5;fill-opacity:1;stroke:#6b96d1;stroke-width:0.4;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+           id="rect130"
+           width="6"
+           height="25"
+           x="33"
+           y="22.499998"
+           rx="1.5" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.9986px;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:0.4;stroke-linejoin:round"
+           x="-42.274605"
+           y="36.766148"
+           id="text130"
+           transform="rotate(-90)"><tspan
+             sodipodi:role="line"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.9986px;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.4"
+             x="-42.274605"
+             y="36.766148"
+             id="tspan130">Linear Proj</tspan></text>
+      </g>
+      <g
+         id="g131"
+         transform="translate(-2,4.9999997)">
+        <rect
+           style="fill:#cfe0f5;fill-opacity:1;stroke:#6b96d1;stroke-width:0.4;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+           id="rect131"
+           width="6"
+           height="25"
+           x="44"
+           y="22.499998"
+           rx="1.5" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.9986px;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:0.4;stroke-linejoin:round"
+           x="-42.349567"
+           y="47.766144"
+           id="text131"
+           transform="rotate(-90)"><tspan
+             sodipodi:role="line"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.9986px;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.4"
+             x="-42.349567"
+             y="47.766144"
+             id="tspan131">LayerNorm</tspan></text>
+      </g>
+    </g>
+    <use
+       x="0"
+       y="0"
+       xlink:href="#sym_mul"
+       id="use126"
+       transform="translate(0.002784,68.999999)" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#sym_mul"
+       id="use129"
+       transform="translate(38.002784,69.000001)" />
+    <g
+       id="g101-8"
+       transform="translate(-173.907,52.491154)">
+      <rect
+         style="fill:#cfe0f5;fill-opacity:1;stroke:#6b96d1;stroke-width:0.4;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         id="rect80-9"
+         width="6"
+         height="25"
+         x="330.90701"
+         y="54.564365"
+         rx="1.5" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.9986px;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:0.4;stroke-linejoin:round"
+         x="-70"
+         y="335"
+         id="text80-7"
+         transform="rotate(-90)"><tspan
+           sodipodi:role="line"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.9986px;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.4"
+           x="-70"
+           y="335"
+           id="tspan80-7">FFN</tspan></text>
+    </g>
+    <g
+       id="sym_add-6"
+       transform="translate(-11.999978,104.56225)">
+      <circle
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.35;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         id="path84-4"
+         cx="150"
+         cy="15.000001"
+         r="3" />
+      <path
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.336489;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         d="m 150,11.992113 v 6.007886"
+         id="path85-3" />
+      <path
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.336268;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         d="m 147,15.000001 h 6"
+         id="path86-0" />
+    </g>
+    <use
+       x="0"
+       y="0"
+       xlink:href="#g102"
+       id="use132-3"
+       transform="translate(96.00279,57.002791)" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#g103"
+       id="use133-0"
+       transform="translate(107.0028,57.006735)" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#sym_add-6"
+       id="use134-9"
+       transform="translate(32.999978,-0.002793)" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#g123"
+       id="use135"
+       transform="translate(139.99999,-11.9)" />
+    <path
+       style="fill:#8fd48a;fill-opacity:1;stroke:none;stroke-width:0.349999;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       d="m 22.997234,62.564759 h 5"
+       id="path137" />
+    <g
+       id="g164"
+       transform="translate(-1.907008,-5.4554444)">
+      <rect
+         style="fill:url(#linearGradient163);fill-opacity:1;stroke:#8a9a94;stroke-width:0.4;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         id="rect156"
+         width="6"
+         height="36"
+         x="180.90424"
+         y="38.010963"
+         rx="1.5" />
+      <text
+         xml:space="preserve"
+         style="font-size:2.82223px;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros, Normal';fill:#000000;stroke-width:0.4;stroke-linejoin:round"
+         x="-72.073685"
+         y="184.93294"
+         id="text163"
+         transform="rotate(-90)"><tspan
+           sodipodi:role="line"
+           id="tspan163"
+           style="stroke-width:0.4"
+           x="-72.073685"
+           y="184.93294">Token-Channel Converter</tspan><tspan
+           sodipodi:role="line"
+           style="stroke-width:0.4"
+           x="-72.073685"
+           y="188.46072"
+           id="tspan164" /></text>
+    </g>
+    <use
+       x="0"
+       y="0"
+       xlink:href="#g164"
+       id="use164"
+       transform="translate(0.00275922,69)" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#g140"
+       id="use165"
+       transform="translate(140.00277,11.997207)" />
+    <g
+       id="g180"
+       transform="translate(8.8342285,6.052063)">
+      <rect
+         style="fill:url(#linearGradient174);fill-opacity:1;stroke:#8a9a94;stroke-width:0.4;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         id="rect173"
+         width="15"
+         height="25"
+         x="71.503456"
+         y="-336.16577"
+         rx="1.5"
+         transform="rotate(90)" />
+      <text
+         xml:space="preserve"
+         style="font-size:2.82223px;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros, Normal';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.4;stroke-linejoin:round"
+         x="323.72787"
+         y="78.272499"
+         id="text174"><tspan
+           sodipodi:role="line"
+           style="stroke-width:0.4"
+           x="323.72787"
+           y="78.272499"
+           id="tspan176">Adaptive Gated</tspan><tspan
+           sodipodi:role="line"
+           style="stroke-width:0.4"
+           x="323.72787"
+           y="81.800285"
+           id="tspan178">Fusion Module</tspan><tspan
+           sodipodi:role="line"
+           style="stroke-width:0.4"
+           x="323.72787"
+           y="85.328072"
+           id="tspan175" /><tspan
+           sodipodi:role="line"
+           style="stroke-width:0.4"
+           x="323.72787"
+           y="88.855865"
+           id="tspan174" /></text>
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer6"
+     inkscape:label="solid"
+     style="stroke:#000000;stroke-width:0.35;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+     transform="translate(4e-7,-20)">
+    <path
+       style="fill:#8fd48a;fill-opacity:1;stroke:#000000;stroke-width:0.223606;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle)"
+       d="m 22.997234,62.564759 h 5"
+       id="path140" />
+    <path
+       style="fill:#8fd48a;fill-opacity:1;stroke:#000000;stroke-width:0.187145;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle)"
+       d="M 7.9999996,62.55552 H 15"
+       id="path140-96" />
+    <path
+       style="fill:#8fd48a;fill-opacity:1;stroke:#000000;stroke-width:0.186225;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle-4)"
+       d="M 7.9999996,107.55552 H 15"
+       id="path140-96-7" />
+    <path
+       style="fill:#8fd48a;fill-opacity:1;stroke:#000000;stroke-width:0.186225;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle-4-6)"
+       d="m 345,85.055511 h 6.99998"
+       id="path140-96-7-7" />
+    <path
+       style="fill:#8fd48a;fill-opacity:1;stroke:#000000;stroke-width:0.221187;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle)"
+       d="m 33.997235,62.564759 h 4.999998"
+       id="path141" />
+    <path
+       style="fill:#8fd48a;fill-opacity:1;stroke:#000000;stroke-width:0.221187;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle)"
+       d="m 44.997234,62.564759 h 5.000001"
+       id="path142" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.221;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:url(#marker144)"
+       d="m 49.997235,50.564759 h -2.516203 l 0.01619,12"
+       id="path143" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:none;stroke-width:0.221;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle)"
+       d="m 49.997235,74.564759 -2.5,2e-6 -1.4e-5,-12.000002"
+       id="path145" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.221;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:url(#marker144)"
+       d="m 49.997235,74.564759 -2.5,2e-6 V 62.564759"
+       id="path146" />
+    <path
+       style="fill:#8fd48a;fill-opacity:1;stroke:#000000;stroke-width:0.221187;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle-22)"
+       d="m 184.99722,50.555519 h 5"
+       id="path142-8" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.221;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:url(#marker144-69)"
+       d="m 189.99722,38.555519 h -2.5162 l 0.0162,12"
+       id="path143-8" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.221;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:url(#marker144-69)"
+       d="m 189.99722,62.555519 -2.5,2e-6 V 50.555519"
+       id="path146-9" />
+    <path
+       style="fill:#8fd48a;fill-opacity:1;stroke:#000000;stroke-width:0.223606;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle-3)"
+       d="m 22.99722,107.56476 h 5"
+       id="path140-9" />
+    <path
+       style="fill:#8fd48a;fill-opacity:1;stroke:#000000;stroke-width:0.221187;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle-3)"
+       d="m 33.997221,107.56476 h 4.999998"
+       id="path141-6" />
+    <path
+       style="fill:#8fd48a;fill-opacity:1;stroke:#000000;stroke-width:0.221187;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle-3)"
+       d="m 44.99722,107.56476 h 5.000001"
+       id="path142-9" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.221;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:url(#marker144-0)"
+       d="m 49.997221,95.564759 h -2.516203 l 0.01619,12.000001"
+       id="path143-3" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:none;stroke-width:0.221;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle-3)"
+       d="m 49.997221,119.56476 h -2.5 l -1.4e-5,-12"
+       id="path145-3" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.221;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:url(#marker144-0)"
+       d="m 49.997221,119.56476 h -2.5 v -12"
+       id="path146-8" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.221;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle)"
+       d="M 69.997234,50.552169 H 74.99723"
+       id="path147" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.221;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker144)"
+       d="m 173.99723,50.553567 h 5"
+       id="path147-3" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.221;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle-5-6)"
+       d="m 173.99999,119.54751 h 5"
+       id="path147-3-6" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.221;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle)"
+       d="m 80.99723,50.552169 h 5"
+       id="path148" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.221;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle)"
+       d="m 107.99724,50.552169 h 5"
+       id="path149" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.221;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle)"
+       d="m 118.99724,50.552169 h 5"
+       id="path150" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.221;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle)"
+       d="m 129.99724,50.552169 5.00002,0.0067"
+       id="path151" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.221;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle)"
+       d="m 140.99724,50.55357 h 5"
+       id="path152" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.221;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle)"
+       d="m 151.99724,50.55357 h 5"
+       id="path153" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.221;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle)"
+       d="m 162.99723,50.55357 5.00001,0.0039"
+       id="path154" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.221;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle-2)"
+       d="M 69.997233,119.55202 H 74.99723"
+       id="path147-6" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.221;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle-2)"
+       d="m 80.99723,119.55202 h 5"
+       id="path148-9" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.221;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle-2)"
+       d="m 107.99724,119.55202 h 5"
+       id="path149-8" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.221;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle-2)"
+       d="m 118.99724,119.55202 h 5"
+       id="path150-7" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.221;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle-2)"
+       d="m 129.99724,119.55202 5.00002,0.007"
+       id="path151-2" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.221;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle-2)"
+       d="m 140.99724,119.55202 h 5"
+       id="path152-8" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.221;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle-2)"
+       d="m 151.99724,119.55202 h 5"
+       id="path153-2" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.221;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle-2)"
+       d="m 162.99723,119.55953 5.00001,0.004"
+       id="path154-9" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.221;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:url(#marker144)"
+       d="m 137.99726,47.571497 2e-5,-11.971128 -101.500027,0.09622 v 26.87491"
+       id="path155" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.221;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:url(#marker144-6)"
+       d="m 137.99724,122.53954 2e-5,11.97113 -101.500026,-0.0962 v -26.87493"
+       id="path155-0" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.223;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:url(#marker144)"
+       d="m 170.99724,53.568702 -1e-5,11.996055 -27.99999,0.01312 V 50.564756"
+       id="path156" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.223;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:url(#marker144-02)"
+       d="m 170.99724,116.56081 -1e-5,-11.99605 -27.99999,-0.0131 v 15.01312"
+       id="path156-3" />
+    <path
+       style="fill:#8fd48a;fill-opacity:1;stroke:#000000;stroke-width:0.221126;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle-6)"
+       d="m 184.99998,119.55552 h 4.99723"
+       id="path142-3" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.220939;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:url(#marker144-8)"
+       d="m 189.99721,107.55552 h -2.51481 l 0.0162,12"
+       id="path143-33" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.220939;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:url(#marker144-8)"
+       d="m 189.99721,131.55551 -2.49861,1e-5 v -12"
+       id="path146-80" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#path147"
+       id="use166"
+       transform="matrix(1,0,0,-1,140.00276,89.107688)" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#path148"
+       id="use167"
+       transform="matrix(1,0,0,-1,140.00276,89.107688)" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.221;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle)"
+       d="m 248,38.555519 h 5"
+       id="use168" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.221;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle-9)"
+       d="m 210.00278,131.55552 h 5"
+       id="path147-37" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.221;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle-9)"
+       d="m 221.00278,131.55552 h 5"
+       id="path148-3" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.221;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle-9)"
+       d="m 248.00279,131.55552 h 5"
+       id="path149-2" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#path151"
+       id="use169"
+       transform="translate(140.00276,0.00335)" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#path152"
+       id="use170"
+       transform="translate(140.00276,0.00335)" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#path153"
+       id="use171"
+       transform="translate(140.00276,0.00335)" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#path154"
+       id="use172"
+       transform="translate(140.00276,0.00335)" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.221;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle-26)"
+       d="m 270,119.55552 5.00002,0.007"
+       id="path151-9" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.221;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle-26)"
+       d="m 281,119.55692 h 5"
+       id="path152-6" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.221;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle-26)"
+       d="m 292,119.55692 h 5"
+       id="path153-0" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.221;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle-26)"
+       d="M 302.99999,119.55692 308,119.56092"
+       id="path154-4" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.221;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle)"
+       d="m 259,38.55831 h 2.50794 l -0.0316,12.006445 H 264"
+       id="path173" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#path173"
+       id="use173" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#path173"
+       id="use173-2"
+       style="stroke:#000000;stroke-width:0.35;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       transform="matrix(1.0005617,0,0,-1.0005617,-0.14549177,170.14869)" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.221;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle-5)"
+       d="m 314.00004,50.559458 18.50001,-0.0039 v 27.000004"
+       id="path180" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.220999;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle-0)"
+       d="m 314.00006,119.55151 18.49994,0.004 V 92.555519"
+       id="path180-1" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#path156-3"
+       id="use180"
+       transform="translate(140.00276,0.00386)" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#path156"
+       id="use181"
+       transform="translate(140.00274,-0.009245)" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.207805;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:url(#marker144)"
+       d="M 277.99998,47.874561 V 28.111036 L 175.99998,28 v 22.513384"
+       id="path182" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.208;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:url(#marker144-4)"
+       d="m 278.00002,122.19929 -4e-5,19.8006 -102,0.11125 4e-5,-22.55562"
+       id="path182-8" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer7"
+     inkscape:label="legend"
+     transform="translate(4e-7,-20)">
+    <g
+       id="g194"
+       transform="translate(4.5000039,-4.944481)">
+      <g
+         id="g193">
+        <g
+           id="sym_mul-6-2"
+           transform="rotate(-45,255.83809,210.16043)">
+          <circle
+             style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.35;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+             id="circle124-1-17"
+             cx="150"
+             cy="15.000001"
+             r="3" />
+          <path
+             style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.336489;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+             d="m 150,11.992113 v 6.007886"
+             id="path125-0-5" />
+          <path
+             style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.336268;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+             d="m 147,15.000001 h 6"
+             id="path126-4-1" />
+        </g>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:0.4;stroke-linejoin:round"
+           x="48.73542"
+           y="148.32175"
+           id="text190"><tspan
+             sodipodi:role="line"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.4"
+             x="48.73542"
+             y="148.32175"
+             id="tspan191">Matrix Multiplication</tspan></text>
+      </g>
+      <g
+         id="g192">
+        <g
+           id="sym_mul-6-2-1"
+           transform="translate(-51.999998,132)">
+          <circle
+             style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.35;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+             id="circle124-1-17-6"
+             cx="150"
+             cy="15.000001"
+             r="3" />
+          <path
+             style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.336489;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+             d="m 150,11.992113 v 6.007886"
+             id="path125-0-5-6" />
+          <path
+             style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.336268;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+             d="m 147,15.000001 h 6"
+             id="path126-4-1-2" />
+        </g>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:0.4;stroke-linejoin:round"
+           x="103.73544"
+           y="148.32175"
+           id="text190-1"><tspan
+             sodipodi:role="line"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.4"
+             x="103.73544"
+             y="148.32175"
+             id="tspan191-9">Matrix Addition</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>
